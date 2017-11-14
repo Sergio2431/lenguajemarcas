@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Matrícula</title>
+    <style>
+      body{
+        font:Sans-Serif;
+        color: #071EEF
+      }
+    </style>
+  </head>
+  <body style="background-color: #6B97FF;">
+    <h1 style="background-color: #B0B0B0;" style="font-size:40px;">Florida Centro de Formació</h1>
+    <h2 style="background-color: #B0B0B0;" style="font-size:20px;">Ejemplo de formulario: Matriculación en el DAW</h2>
+    <form action="index.html" method="get">
+    Nombre:<input type=“text” name=“Nombre” size=“25”>
+    Apellidos:<input type=“text” name=“aapp” size=“50”>
+    Sexo:  <input type="radio" name="sexo" value="M"/>H
+      <input type="radio" name="sexo" value="H"/>M </form><p>
+    Fecha de nacimiento:<action="control_form.php" method="get"> <select
+    name="dia">
+      <option selected="selected" value="día">dia</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+      <option value="13">13</option>
+      <option value="14">14</option>
+      <option value="15">15</option>
+      <option value="16">16</option>
+      <option value="17">17</option>
+      <option value="18">18</option>
+      <option value="19">19</option>
+      <option value="20">20</option>
+      <option value="21">21</option>
+      <option value="22">22</option>
+      <option value="23">23</option>
+      <option value="24">24</option>
+      <option value="25">25</option>
+      <option value="26">26</option>
+      <option value="27">27</option>
+      <option value="28">28</option>
+      <option value="29">29</option>
+      <option value="30">30</option>
+      <option value="31">31</option>
+    </select>
+    <select name="mes">
+      <option selected="selected" value="mes">mes</option>
+      <option value="enero">enero</option>
+      <option value="febrero">febrero</option>
+      <option value="marzo">marzo</option>
+      <option value="abril">abril</option>
+      <option value="mayo">mayo</option>
+      <option value="junio">junio</option>
+      <option value="julio">julio</option>
+      <option value="agosto">agosto</option>
+      <option value="septiembre">septiembre</option>
+      <option value="octubre">ocutbre</option>
+      <option value="noviembre">noviembre</option>
+      <option value="diciembre">diciembre</option>
+    </select>
+    <select name="año">
+      <option selected="selected" value="año">año</option>
+      <option value="1990">1990</option>
+      <option value="1991">1991</option>
+      <option value="1992">1992</option>
+      <option value="1993">1993</option>
+      <option value="1994">1994</option>
+      <option value="1995">1995</option>
+      <option value="1996">1996</option>
+      <option value="1997">1997</option>
+      <option value="1998">1998</option>
+      <option value="1999">1999</option>
+      <option value="2000">2000</option>
+    </select>
+    <p><b>Escogelos módulos en los que te matriculas: </b></p>
+    <table>
+      <tr><td><input type="checkbox" name="bbdd">Bases de datos</input></td>
+      <td><input type="checkbox" name="prog">Programación</input></td></tr>
+      <tr><td><input type="checkbox" name="leng">Lenguaje de Marcas</input></td>
+      <td><input type="checkbox" name="ing">Inglés</input></td></tr>
+      <tr><td><input type="checkbox" name="si">Sistemas Informáticos</input></td>
+      <td><input type="checkbox" name="ed">Entornos de Desarrollos</input></td></tr>
+      <tr><td><input type="checkbox" name="fol">FOL</input></td>
+      <td><input type="checkbox" name="admin">Aministración de Sistemas Gestores de Bases de Datos</input></td></tr>
+      <tr><td><input type="checkbox" name="lengin">Lenguajes de Marcas de Gestión de Información</input></td>
+      <td><input type="checkbox" name="seg">Seguridad y Alta Disponibilidad</input></td></tr>
+      <tr><td><input type="checkbox" name="for">Formación y Orientación Laboral</input></td>
+      <td><input type="checkbox" name="emp">Empresa e Iniciativa Emprendedora</input></td></tr>
+      <tr><td><input type="checkbox" name="proy">Proyecto de DAW</input></td>
+      <td><input type="checkbox" name="fct">Formación en Centros de Trabajo</input></td></tr>
+    </table>
+    <p><b>Estudios previos:</b><br><textarea rows="2" cols="40" name="estudios"></textarea></p>
+    <p><input type="submit" value="Enviar">
+    <input type="reset" value="Restablecer"></p>
+  </form>
+  </body>
+</html>
