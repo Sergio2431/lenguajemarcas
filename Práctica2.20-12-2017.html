@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Práctica con CSS</title>
+    <style media="screen">
+      *{
+        font-size: 16px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      p{
+        color: #555;
+      }
+      a{
+        color: #C30;
+      }
+      #primero{
+        color: #369;
+      }
+      #primero em{
+        color: #0000BB;
+        background-color: #FFFFCC;
+      }
+      em.especial{
+        color: #FFFF00;
+        background-color: #000000;
+      }
+      span.normal{
+        font-weight: bolder;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="primero">
+      <p><a href="http://www.floridauniversitaria.es">
+          HTML &amp; CSS: Curso práctico avanzado</a></p>
+      <p><font style="color: #4695d8" > Aunque los inicios de <a href="https://es.wikipedia.org/wiki/Internet">Internet</a> se remontan a los años sesenta, no ha sido hasta los años noventa cuando, gracias a la Web, se ha extendido su uso por todo el mundo. En pocos años, la Web ha evolucionado enormemente: se ha pasado de páginas sencillas, con pocas imágenes y contenidos estáticos que eran visitadas por unos pocos usuarios a </font><em>páginas complejas, con contenidos dinámicos que provienen de bases de datos y que son visitadas por miles de usuarios al mismo tiempo</em>.</font></p>
+    </div>
+    <div id="segundo">
+      <p>Todas las páginas están internamente construidas con la misma tecnología, con el <em class="especial">Lenguaje de marcas de hipertexto</em> (<span><strong>Hypertext Markup Language</strong></span>, <a href="https://es.wikipedia.org/wiki/HTML">HTML</a>) y con las <em class="especial">Hojas de estilo en cascada</em> (<span><strong>Cascading Style Sheets</strong></span>, <a href="https://es.wikipedia.org/wiki/CSS">CSS</a>).</p>
+      <p>Este libro es <em>adecuado para cualquiera que tenga interés en aprender a desarrollar sus propias páginas web</em>. No son necesarios conocimientos previos para aprender con este libro, lo único que es necesario es saber utilizar un ordenador y saber navegar por la Web.</p>
+    </div>
+  </body>
+</html>
