@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Pedidos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation= "PedidosSchema.xsd">
+  <pedido>
+    <tlfnocliente>65555</tlfnocliente>
+    <fechapedido>4/3/2013</fechapedido>
+    <contenido>100 kg naranjas y 80 kg limones</contenido>
+  </pedido>
+  <pedido>
+    <tlfnocliente>64444</tlfnocliente>
+    <fechapedido>5/3/2013</fechapedido>
+    <contenido>120 kg naranjas y 70 kg limones</contenido>
+  </pedido>
+  <pedido>
+    <tlfnocliente>63333</tlfnocliente>
+    <fechapedido>5/3/2013</fechapedido>
+    <contenido>110 kg naranjas y 90 kg limones</contenido>
+  </pedido>
+</Pedidos>
