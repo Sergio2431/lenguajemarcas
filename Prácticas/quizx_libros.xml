@@ -1,0 +1,67 @@
+<Libros>
+  <libro>
+    <Cod_Libro>1</Cod_Libro>
+    <Titulo>Don Quijote de la Mancha</Titulo>
+    <Editorial>E1</Editorial>
+    <NumPaginas>176</NumPaginas>
+    <Autores>
+      <autor>
+        <Cod_Autor>1</Cod_Autor>
+        <Nombre>Miguel de Cervantes</Nombre>
+        <FechaNacim>29/09/1547</FechaNacim>
+      </autor>
+    </Autores>
+  </libro>      
+  <libro>
+    <Cod_Libro>2</Cod_Libro>
+    <Titulo>La Carta Esférica</Titulo>
+    <Editorial>E2</Editorial>
+    <NumPaginas>320</NumPaginas>
+    <Autores>
+      <autor>
+        <Cod_Autor>2</Cod_Autor>
+        <Nombre>Arturo Pérez Reverte</Nombre>
+        <FechaNacim>25/11/1951</FechaNacim>
+      </autor>
+    </Autores>
+  </libro>
+  <libro>
+    <Cod_Libro>3</Cod_Libro>
+    <Titulo>La piel del tambor</Titulo>
+    <Editorial>E2</Editorial>
+    <NumPaginas>370</NumPaginas>
+    <Autores>
+      <autor>
+        <Cod_Autor>2</Cod_Autor>
+        <Nombre>Arturo Pérez Reverte</Nombre>
+        <FechaNacim>25/11/1951</FechaNacim>
+      </autor>
+    </Autores>
+  </libro>
+  <libro>
+    <Cod_Libro>4</Cod_Libro>
+    <Titulo>La Colmena</Titulo>
+    <Editorial>E1</Editorial>
+    <NumPaginas>250</NumPaginas>
+    <Autores>
+      <autor>
+        <Cod_Autor>3</Cod_Autor>
+        <Nombre>Camilo J. Cela</Nombre>
+        <FechaNacim>11/05/2016</FechaNacim>
+      </autor>
+    </Autores>
+  </libro>
+  <libro>
+    <Cod_Libro>5</Cod_Libro>
+    <Titulo>Las Novelas Ejemplares<     /Titulo>
+      <Editorial>E1</Editorial>
+      <NumPaginas>200</NumPaginas>
+      <Autores>
+        <autor>
+          <Cod_Autor>1</Cod_Autor>
+          <Nombre>Miguel de Cervantes</Nombre>
+          <FechaNacim>29/09/1547</FechaNacim>
+        </autor>
+      </Autores>
+    </libro>
+</Libros>
