@@ -1,0 +1,20 @@
+<indexing xmlns:t="http://www.qizx.com/namespace/Tutorial">
+  <!-- Default rules -->
+
+  <element as="numeric+string"/>
+  <element as="date+string" />
+  <element as="string" />
+
+  <attribute as="numeric+string" />
+  <attribute as="date+string" />
+  <attribute as="string" />
+
+  <!-- Custom rules -->
+
+  <element name="t:birthDate" context="t:author" 
+           as="date" sieve="com.qizx.api.util.text.FormatDateSieve" 
+           format="MMMM d, yyyy" locale="en-US" timezone="GMT" />
+
+  <element name="t:publicationDate" context="t:book" 
+           as="numeric" sieve="reindex.RomanNumberSieve" />
+</indexing>

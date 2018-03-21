@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Request get</title>
+
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <h2 class="requestname">get</h2>
+
+    <p class="shortd">Get the contents of a Document or a Collection.</p>
+
+    <p>A Collection is returned as a line-separated list of paths of contained
+    Documents or Collections. Collection paths have a trailing slash.</p>
+
+    <p>A Document is obtained as serialized XML.</p>
+
+    <p>A non-XML data Document is obtained as a binary stream. The
+    'Content-Type' header reflects the property "content-type" of the
+    document.</p>
+
+    <form action="../api/" enctype="multipart/form-data" method="GET">
+      <input name="op" type="hidden" value="get" />
+
+      <br />
+
+      <h4>HTTP Request: GET</h4>
+
+      <h4>Parameters:</h4>
+
+      <table cellpadding="4" class="param_table" frame="void" rules="rows">
+        <thead align="center">
+          <tr align="left">
+            <th>Name</th>
+
+            <th>Value</th>
+
+            <th>Description</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="paramrow" valign="top">
+            <td>path</td>
+
+            <td>
+              <input name="path" type="text" value="" />
+            </td>
+
+            <td>Path of the Library member to get. Can be specified explicitly
+            or as the remainder the HTTP URL.</td>
+          </tr>
+
+          <tr valign="top">
+            <td>library</td>
+
+            <td>
+              <input name="library" type="text" value="" />
+            </td>
+
+            <td>Name of Library used (can be empty if exactly one Library in
+            server).</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <input class="submit" type="submit" value="Submit request" />
+    </form>
+  </body>
+
+  <h4>Response:</h4>
+
+  <p>
+    <i>   mime-type: text/xml or text/plain</i>
+  </p>
+
+  <ul type="circle">
+    <li>
+      <p>When the Library member is a Collection, the result is of mime type
+      text/plain and the contents is the list of paths of children members of
+      the collection, one path per line. Collection paths have a trailing
+      slash.</p>
+    </li>
+
+    <li>
+      <p>When Library member is a Document, the result is the XML contents of
+      the document, serialized in XML and UTF-8.</p>
+    </li>
+  </ul>
+
+  <p> </p>
+
+  <h4>Error codes:</h4>
+
+  <dl>
+    <dt>
+      <a href="errorcodes.html#NotFound">NotFound</a>
+    </dt>
+
+    <dd>when the Library member does not exist.</dd>
+
+    <dt>
+      <a href="errorcodes.html#AccessControl">AccessControl</a>
+    </dt>
+
+    <dd>when the user is not allowed to read the Library member contents.</dd>
+  </dl>
+</html>

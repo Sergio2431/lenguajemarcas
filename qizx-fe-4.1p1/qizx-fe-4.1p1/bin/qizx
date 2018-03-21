@@ -1,0 +1,33 @@
+#!/bin/bash
+set +u
+#
+# Wrapper script for running Qizx in command-line mode
+#  (c) Axyana software 2007-2010
+#
+
+# dbin is the location of this script (qizx)
+
+dbin=`dirname $0`
+
+distrib=$dbin/..
+dlib=$distrib/lib
+
+#
+#       Basic jars
+#
+jars=$dlib/qizx.jar:$dlib/jhall.jar:$dlib/resolver.jar:$dlib/qizx_eval_key.jar
+
+#
+#       Custom jars can be added here:
+
+####jars=$jars:myjar.jar
+
+#
+#       Memory size can be customized here (Mb) or externally via VMOPTS
+VMOPTS="-Xmx200m $VMOPTS"
+
+#       $distrib/config added to classpath to use XML catalogs
+#
+java -classpath $distrib/config:$distrib/build:$jars \
+	 -Dxml.catalog.files="$XML_CATALOG_FILES" \
+				$VMOPTS  com.qizx.apps.QizxCLI "$@"

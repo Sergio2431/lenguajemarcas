@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<project name="common">
+  <dirname property="common.basedir" file="${ant.file.common}"/>
+  <property name="qizx.dir" value="${common.basedir}/../../.." />
+
+  <path id="cp">
+    <pathelement location="." />
+
+    <!-- After compiling the code found there, reindex/ will contain 
+         a custom sieve called RomanNumberSieve. -->
+    <pathelement location="${common.basedir}/reindex" />
+
+    <pathelement location="${qizx.dir}/lib/qizx.jar" />
+    <pathelement location="${qizx.dir}/lib/resolver.jar" />
+  </path>
+
+  <target name="init">
+    <tstamp />
+  </target>
+
+  <target name="compile" depends="init">
+    <javac debug="on" debuglevel="source,lines" deprecation="on" 
+           classpathref="cp" srcdir="." destdir="." includes="*.java" />
+  </target>
+
+  <target name="clean">
+    <delete includeemptydirs="yes">
+      <fileset dir="." defaultexcludes="no">
+        <patternset>
+          <include name="**/*~" />
+          <include name="**/*.class" />
+          <include name="tests/out/**/*" />
+        </patternset>
+      </fileset>
+    </delete>
+  </target>
+</project>

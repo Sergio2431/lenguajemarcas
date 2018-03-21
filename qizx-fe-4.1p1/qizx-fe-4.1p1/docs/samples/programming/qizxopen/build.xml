@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<project basedir="." default="compile">
+  
+  <property name="queries" value="queries"/>
+  <property name="qizx.dir" value="../../../.." />
+
+  <path id="cp">
+    <pathelement location="." />
+
+      <pathelement location="${qizx.dir}/lib/qizxopen.jar" />
+      <!-- add redundant path so that it works also in Qizx/db -->
+      <pathelement location="${qizx.dir}/lib/qizx.jar" />
+	  <pathelement location="${qizx.dir}/lib/resolver.jar" />
+  </path>
+
+  <target name="init">
+    <tstamp />
+  </target>
+
+  <target name="compile" depends="init">
+    <javac debug="on" debuglevel="source,lines" deprecation="on" 
+           classpathref="cp" srcdir="." destdir="." includes="*.java" />
+  </target>
+
+
+  <target name="run1" depends="compile">
+    <java classpathref="cp" fork="yes" classname="OpenQuery">
+      <arg value="${queries}/4.xq" />
+    </java>
+  </target>
+
+  <!-- Tests -->
+
+  <target name="run2" depends="compile">
+    <java classpathref="cp" fork="yes" classname="OpenQuery">
+        <sysproperty key="xml.catalog.files" 
+                     value="${basedir}/../../xhtml_dtd/catalog.xml" />
+        <sysproperty key="xml.catalog.prefer" value="public" />
+        <sysproperty key="xml.catalog.verbosity" value="0" />
+      <arg value="${queries}/1.xq" />
+      <arg value="${queries}/2.xq" />
+      <arg value="${queries}/3.xq" />
+      <arg value="${queries}/4.xq" />
+      <arg value="${queries}/5.xq" />
+      <arg value="${queries}/6.xq" />
+      <arg value="${queries}/7.xq" />
+      <arg value="${queries}/8.xq" />
+    </java>
+  </target>
+
+  <target name="run3" depends="compile">
+    <java classpathref="cp" fork="yes" classname="OpenQuery">
+        <sysproperty key="xml.catalog.files" 
+                     value="${basedir}/../../xhtml_dtd/catalog.xml" />
+      <arg value="-f" />
+      <arg value="6" />
+      <arg value="-l" />
+      <arg value="5" />
+      <arg value="${queries}/3.xq" />
+    </java>
+  </target>
+
+  <target name="run4" depends="compile">
+    <java classpathref="cp" fork="yes" classname="OpenQuery">
+        <sysproperty key="xml.catalog.files" 
+                     value="${basedir}/../../xhtml_dtd/catalog.xml" />
+      <arg value="-v" />
+      <arg value="searched" />
+      <arg value="The" />
+      <arg value="${queries}/101.xq" />
+    </java>
+  </target>
+
+  <target name="run5" depends="compile">
+    <java classpathref="cp" fork="yes" classname="OpenQuery">
+        <sysproperty key="xml.catalog.files" 
+                     value="${basedir}/../../xhtml_dtd/catalog.xml" />
+      <arg value="-v" />
+      <arg value="{variables}searched" />
+      <arg value=" of " />
+      <arg value="${queries}/102.xq" />
+    </java>
+  </target>
+
+  <target name="run_all" depends="run1, run2, run3, run4, run5" />
+
+  <target name="clean">
+    <delete includeemptydirs="yes">
+      <fileset dir="." defaultexcludes="no">
+        <patternset>
+          <include name="**/*~" />
+          <include name="**/*.class" />
+          <include name="tests/out/**/*" />
+        </patternset>
+      </fileset>
+    </delete>
+  </target>
+</project>

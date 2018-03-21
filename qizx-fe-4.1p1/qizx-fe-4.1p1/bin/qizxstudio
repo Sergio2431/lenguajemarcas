@@ -1,0 +1,33 @@
+#!/bin/bash
+set +u
+
+# Wrapper script for running Qizx in standalone mode
+#  (c) Axyana software 2007-2010
+#
+
+# dbin is the location of this script (qizxstudio)
+
+dbin=`dirname $0`
+
+distrib=$dbin/..
+dlib=$distrib/lib
+
+#
+#       Basic jars
+#
+jars="$dlib/qizxstudio.jar:$dlib/qizxstudio_help.jar:$dlib/qizx.jar:$dlib/jhall.jar:$dlib/resolver.jar:$dlib/qizx_eval_key.jar"
+
+#
+#       Custom jars can be added here:
+
+####jars=$jars:myjar.jar
+
+#
+#       Memory size can be customized here (Mb)
+VMOPTS="-Xmx200m $VMOPTS"
+
+#       $distrib/config added to classpath to use XML catalogs, license key:
+#
+java -classpath "$distrib/config:$distrib/build:$jars" \
+	 -Dxml.catalog.files="$XML_CATALOG_FILES" \
+                $VMOPTS  com.qizx.apps.studio.QizxStudio "$@"

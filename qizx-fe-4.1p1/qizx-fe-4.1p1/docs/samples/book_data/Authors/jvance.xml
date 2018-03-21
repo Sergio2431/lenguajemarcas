@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<author xmlns="http://www.qizx.com/namespace/Tutorial"
+  nationality="US" gender="male">
+  <fullName>Jack Vance</fullName>
+  <pseudonyms>
+    <pseudonym>Ellery Queen</pseudonym>
+    <pseudonym>Alan Wade</pseudonym>
+    <pseudonym>Peter Held</pseudonym>
+    <pseudonym>John van See</pseudonym>
+    <pseudonym>Jay Kavanse</pseudonym>
+  </pseudonyms>
+  <birthDate>August 28, 1916</birthDate>
+  <birthPlace>
+    <city>San Francisco</city><state>California</state><country>US</country>
+  </birthPlace>
+  <blurb xmlns:html="http://www.w3.org/1999/xhtml">
+    <html:blockquote cite="http://en.wikipedia.org/wiki/Jack_Vance">
+      <html:p>Since his first published story, <html:i>The
+      World-Thinker</html:i> (Thrilling Wonder Stories), in 1945, Vance has
+      written over sixty books. His work is regarded as falling into three
+      categories: science fiction, fantasy and mystery.</html:p>
+
+      <html:p>Three books published under the <html:b>Ellery Queen</html:b>
+      pseudonym were written to editorial requirements.</html:p>
+    </html:blockquote>
+  </blurb>
+</author>

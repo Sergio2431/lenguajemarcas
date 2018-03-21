@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<html><head><title>Request getindexing</title><link href="./style.css" rel="stylesheet" type="text/css"></link></head><body><h2 class="requestname">getindexing</h2><p class="shortd">Get the Indexing Specification of the Library as an XML
+    document.</p>
+      <p></p>
+    <form action="../api/" method="GET" enctype="multipart/form-data"><input name="op" type="hidden" value="getindexing"></input><br></br><h4>HTTP Request: GET</h4><h4>Parameters:</h4><table cellpadding="4" frame="void" rules="rows" class="param_table"><thead align="center"><tr align="left"><th>Name</th><th>Value</th><th>Description</th></tr></thead><tbody><tr valign="top"><td>library</td><td><input name="library" type="text" value=""></input></td><td>Name of Library used (can be empty if exactly one Library in server).</td></tr></tbody></table><input type="submit" value="Submit request" class="submit"></input></form></body><h4>Response:</h4><p><i>   mime-type: text/xml</i></p>
+      <p>The Indexing Specification of the Library in XML.</p>
+    <p> </p><h4>Error codes:</h4><dl><dt><a href="errorcodes.html#AccessControl">AccessControl</a></dt><dd> if the user does not have the role allowing 
+    administration operations (except for 'status' which is allowed to all users).</dd></dl></html>

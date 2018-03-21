@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<book xmlns="http://www.qizx.com/namespace/Tutorial">
+  <title>The Robots of Dawn</title>
+  <author>Isaac Asimov</author>
+  <publicationDate>MCMLXXXIII</publicationDate>
+  <editions>
+    <edition>
+      <ISBN>0553299492</ISBN>
+      <publisher>Doubleday</publisher>
+      <language>English</language>
+      <year>1983</year>
+    </edition>
+  </editions>
+</book>

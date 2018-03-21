@@ -1,0 +1,29 @@
+  All the files, except the contents of bin/ subdirectory, found in this
+  directory have been copied from the Jetty 7 distribution. See
+  legal/jetty.README. Such files are subject to the Apache License Version
+  2.0. See legal/jetty.LICENSE.
+
+  All the files, except those mentioned below, found in the bin/ subdirectory
+  are "Copyright (c) 2010 Pixware SARL. All rights reserved.". Such files must
+  be considered as being an integral part of the software product that hosts
+  them (hereafter "Software"). Therefore, the license terms which apply to the
+  Software also apply to the files contained in the bin/ subdirectory.
+
+  However, the following components have not been developed by XMLmind:
+
+      * bin/jh.jar
+
+      * bin/jsl*.*
+
+  Almost all the icons either directly come from or are based on
+  "IconExperience X-Collections", a commercial product licensed by Pixware
+  SARL from INCORS GmbH. These icons may not be used outside the context of
+  the Software.
+
+  For each component, there are two files in sub-directory legal/:
+
+      [<component_name>.README] a text or HTML file describing the component.
+
+      [<component_name>.LICENSE] a text or HTML file containing the license
+          attached to the component.
+

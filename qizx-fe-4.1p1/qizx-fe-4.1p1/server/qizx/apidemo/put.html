@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<html><head><title>Request put</title><link href="./style.css" rel="stylesheet" type="text/css"></link></head><body><h2 class="requestname">put</h2><p class="shortd">Upload and store XML document(s) into an XML Library. </p>
+      <p>Documents are uploaded in POST multipart, then XML-parsed on the server side.</p>
+      <p>To validate documents with DTD's or XML Schema, OASIS XML Catalogs can be
+      configured in the server. When a DTD or Schema is not found, a fallback DTD is used,
+      so no parsing error should happen.</p>
+    <form action="../api/" method="POST" enctype="multipart/form-data"><input name="op" type="hidden" value="put"></input><br></br><h4>HTTP Request: POST</h4><h4>Parameters:</h4><table cellpadding="4" frame="void" rules="rows" class="param_table"><thead align="center"><tr align="left"><th>Name</th><th>Value</th><th>Description</th></tr></thead><tbody><tr class="paramrow" valign="top"><td>path</td><td><input name="path" type="text" value=""></input></td><td>Path the Document will have in the XML Library. Can be
+    specified explicitly or as the remainder the HTTP URL. </td></tr><tr class="paramrow" valign="top"><td>data</td><td><input type="file" name="data"></input></td><td>
+      
+
+      <p>XML contents of the document. This data is parsed on the server
+      side.</p>
+
+      <p>This parameter is generally passed as a File part, but can also be a
+      string value.</p>
+    </td></tr><tr class="paramrow" valign="top"><td>path2</td><td><input name="path2" type="text" value=""></input></td><td>Library path of additional Document.</td></tr><tr class="paramrow" valign="top"><td>data2</td><td><input type="file" name="data2"></input></td><td>
+      
+
+      <p>XML contents of additional document.</p>
+    </td></tr><tr class="paramrow" valign="top"><td>path3</td><td><input name="path3" type="text" value=""></input></td><td>Library path of additional Document ...</td></tr><tr class="paramrow" valign="top"><td>data3</td><td><input type="file" name="data3"></input></td><td>
+      
+
+      <p>XML contents of additional document ...</p>
+    </td></tr><tr valign="top"><td>library</td><td><input name="library" type="text" value=""></input></td><td>Name of Library used (can be empty if exactly one Library in server).</td></tr></tbody></table><input type="submit" value="Submit request" class="submit"></input></form></body><h4>Response:</h4><p><i>   mime-type: text/plain</i></p>
+      <p>For each document that could not be generated, return a line containing
+      the error code, the destination path of the Document, and the error message
+      separated by tabs.</p>
+      <p>The last line is of the form: <b>IMPORT ERRORS #errors</b>, where
+       #errors the number of import errors. Therefore a completely successful
+       put returns a single line 'IMPORT ERRORS 0'.</p>
+    <p> </p><h4>Error codes:</h4><dl><dt><a href="errorcodes.html#AccessControl">AccessControl</a></dt><dd>when the user is not allowed to write on a
+    Document or Collection.</dd><dt><a href="errorcodes.html#XMLData">XMLData</a></dt><dd>Conflicting path with a Collection.</dd></dl></html>

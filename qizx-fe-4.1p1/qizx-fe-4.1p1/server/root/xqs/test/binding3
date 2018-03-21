@@ -1,0 +1,14 @@
+
+declare boundary-space preserve;
+
+(: request parameters :)
+declare variable $param:xml1 as node() external;
+declare variable $param:xml2 as document-node() external;
+declare variable $param:xml3 as element() external;
+
+
+<response>
+document { $param:xml1 instance of document-node() } { $param:xml1 }
+document { $param:xml2 instance of document-node() }
+element? { $param:xml3 instance of element() } { node-name($param:xml3) }
+</response>

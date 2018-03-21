@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<author xmlns="http://www.qizx.com/namespace/Tutorial"
+  nationality="France" gender="male">
+  <fullName>Pierre Boulle</fullName>
+  <birthDate>February 20, 1912</birthDate>
+  <birthPlace><city>Avignon</city><country>France</country></birthPlace>
+  <blurb location="../Author%20Blurbs/Pierre_Boulle.xhtml"/>
+</author>

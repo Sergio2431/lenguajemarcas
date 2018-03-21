@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+  <head>
+    <title>Request setprop</title>
+
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <h2 class="requestname">setprop</h2>
+
+    <p class="shortd">Modify, create or remove properties of a Library
+    member.</p>
+
+    <p>Properties are typed. Possible types are: <code>string</code>,
+    <code>boolean</code>, <code>integer</code>, <code>double</code>,
+    <code>dateTime</code>, <code>node()</code>, and
+    <code>&lt;expression&gt;</code>:</p>
+
+    <ul>
+      <li>when type is "<code>node()</code>", the value is assumed to be a
+      well-formed fragment of XML and is stored as XML nodes, so it can be
+      handled like XML documents.</li>
+
+      <li>when type is "<code>&lt;expression&gt;</code>", the value is an
+      XQuery expression that will be evaluated in the server. It must return
+      only one item, which can also be any kind of node.</li>
+    </ul>
+
+    <p> </p>
+
+    <form action="../api/" enctype="multipart/form-data" method="POST">
+      <h4>HTTP Request: POST</h4>
+
+      <h4>Parameters:</h4>
+
+      <table cellpadding="4" class="param_table" frame="void" rules="rows">
+        <thead align="center">
+          <tr align="left">
+            <th>Name</th>
+
+            <th>Value</th>
+
+            <th>Description</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="paramrow" valign="top">
+            <td>path</td>
+
+            <td><input name="path" type="text" value="" /></td>
+
+            <td>Path of the Library member to modify.</td>
+          </tr>
+
+          <tr class="paramrow" valign="top">
+            <td>name</td>
+
+            <td><input name="name" type="text" value="" /></td>
+
+            <td>name of a property to set.</td>
+          </tr>
+
+          <tr class="paramrow" valign="top">
+            <td>value</td>
+
+            <td><input name="value" type="text" value="" /></td>
+
+            <td>[optional] new value. If absent, the property is removed.</td>
+          </tr>
+
+          <tr class="paramrow" valign="top">
+            <td>type</td>
+
+            <td><input name="type" type="text" value="" /></td>
+
+            <td>[optional] type of the property value: simple name without
+            namespace, defaults to "string".</td>
+          </tr>
+
+          <tr class="paramrow" valign="top">
+            <td>name2</td>
+
+            <td><input name="name2" type="text" value="" /></td>
+
+            <td>[optional] additional property names.</td>
+          </tr>
+
+          <tr class="paramrow" valign="top">
+            <td>value2</td>
+
+            <td><input name="value2" type="text" value="" /></td>
+
+            <td>[optional] additional property values.</td>
+          </tr>
+
+          <tr class="paramrow" valign="top">
+            <td>type2</td>
+
+            <td><input name="type2" type="text" value="" /></td>
+
+            <td>[optional] additional property types.</td>
+          </tr>
+
+          <tr class="paramrow" valign="top">
+            <td>name3</td>
+
+            <td><input name="name3" type="text" value="" /></td>
+
+            <td>[optional] ... name-N: additional property names.</td>
+          </tr>
+
+          <tr class="paramrow" valign="top">
+            <td>value3</td>
+
+            <td><input name="value3" type="text" value="" /></td>
+
+            <td>[optional] ... value-N: additional property values.</td>
+          </tr>
+
+          <tr class="paramrow" valign="top">
+            <td>type3</td>
+
+            <td><input name="type3" type="text" value="" /></td>
+
+            <td>[optional] ... type-N: additional property types.</td>
+          </tr>
+
+          <tr valign="top">
+            <td>library</td>
+
+            <td><input name="library" type="text" value="" /></td>
+
+            <td>Name of Library used (can be empty if exactly one Library in
+            server).</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p><input class="submit" type="submit" value="Submit request" /><input
+      name="op" type="hidden" value="setprop" /></p>
+
+      <h4>Response:</h4>
+
+      <p><i> mime-type: text/plain</i></p>
+
+      <p>Single line containing the path of the Library member.</p>
+
+      <h4>Error codes:</h4>
+
+      <dl>
+        <dt><a href="errorcodes.html#NotFound">NotFound</a></dt>
+
+        <dd>When the Library member does not exist.</dd>
+      </dl>
+    </form>
+  </body>
+</html>

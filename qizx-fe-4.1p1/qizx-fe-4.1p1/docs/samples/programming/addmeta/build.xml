@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<project basedir="." default="compile">
+  <import file="../build_common.xml" />
+
+  <!-- Execute target run3 in ../query before and after adding meta-data. -->
+
+  <target name="run" depends="compile">
+    <java classpathref="cp" fork="yes" classname="addmeta.AddMeta">
+      <arg value="../db" />
+      <arg value="Tutorial" />
+      <arg value="/Author Blurbs" />
+      <arg value="../../book_data/Author Blurbs/Wikipedia/LocalCopyInfo.txt" />
+      <arg value="../../book_data/Author Blurbs/Wikipedia/License.txt" />
+    </java>
+  </target>
+</project>

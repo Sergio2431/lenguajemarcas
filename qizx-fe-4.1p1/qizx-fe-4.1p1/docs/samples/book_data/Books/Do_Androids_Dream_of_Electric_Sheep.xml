@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<book xmlns="http://www.qizx.com/namespace/Tutorial">
+  <title>Do Androids Dream of Electric Sheep?</title>
+  <author>Philip K. Dick</author>
+  <publicationDate>MCMLXVIII</publicationDate>
+  <editions>
+    <edition>
+      <ISBN>0345404475</ISBN>
+      <publisher>Doubleday</publisher>
+      <language>English</language>
+      <year>1968</year>
+    </edition>
+  </editions>
+</book>

@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<project basedir="." default="compile">
+  <import file="../build_common.xml" />
+
+  <target name="run" depends="compile">
+    <java classpathref="cp" fork="yes" classname="get.Get">
+      <arg value="../db" />
+      <arg value="Tutorial" />
+      <arg value="/Authors/pjfarmer.xml" />
+      <arg value="/Author Blurbs/Philip*" />
+      <arg value="/Books/The*.xml" />
+      <arg value="/Publishers/" />
+      <arg value="tests/out" />
+    </java>
+  </target>
+
+  <target name="run2" depends="compile">
+    <java classpathref="cp" fork="yes" classname="get.Get">
+      <arg value="../db" />
+      <arg value="Tutorial" />
+      <arg value="/Authors/ktrout.xml" />
+      <arg value="tests/out" />
+    </java>
+  </target>
+
+  <target name="run3" depends="compile">
+    <java classpathref="cp" fork="yes" classname="get.Get">
+      <arg value="../db" />
+      <arg value="Tutorial" />
+      <arg value="/Authors/pjfarmer.xml" />
+      <arg value="tests/out" />
+    </java>
+  </target>
+</project>

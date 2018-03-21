@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html>
+  <head>
+    <title>Request putnonxml</title>
+
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <h2 class="requestname">putnonxml</h2>
+
+    <p class="shortd">Upload and store non-XML data document(s) into an XML
+    Library. </p>
+
+    <p>Documents are uploaded in POST multipart, then stored as non-XML
+    documents.</p>
+
+    <form action="../api/" enctype="multipart/form-data" method="POST">
+      <input name="op" type="hidden" value="putnonxml" />
+
+      <br />
+
+      <h4>HTTP Request: POST</h4>
+
+      <h4>Parameters:</h4>
+
+      <table cellpadding="4" class="param_table" frame="void" rules="rows">
+        <thead align="center">
+          <tr align="left">
+            <th>Name</th>
+
+            <th>Value</th>
+
+            <th>Description</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="paramrow" valign="top">
+            <td>path</td>
+
+            <td>
+              <input name="path" type="text" value="" />
+            </td>
+
+            <td>Path the Document will have in the database. Can be specified
+            explicitly or as the remainder the HTTP URL. </td>
+          </tr>
+
+          <tr class="paramrow" valign="top">
+            <td>data</td>
+
+            <td>
+              <input name="data" type="file" />
+            </td>
+
+            <td>
+              <p>contents of the data document. </p>
+
+              <p>This parameter is generally passed as a File part, but can
+              also be a string value.</p>
+            </td>
+          </tr>
+
+          <tr class="paramrow" valign="top">
+            <td>path2</td>
+
+            <td>
+              <input name="path2" type="text" value="" />
+            </td>
+
+            <td>Library path of additional data document.</td>
+          </tr>
+
+          <tr class="paramrow" valign="top">
+            <td>data2</td>
+
+            <td>
+              <input name="data2" type="file" />
+            </td>
+
+            <td>
+              <p>contents of additional data document.</p>
+            </td>
+          </tr>
+
+          <tr class="paramrow" valign="top">
+            <td>path3</td>
+
+            <td>
+              <input name="path3" type="text" value="" />
+            </td>
+
+            <td>Library path of additional data Document ...</td>
+          </tr>
+
+          <tr class="paramrow" valign="top">
+            <td>data3</td>
+
+            <td>
+              <input name="data3" type="file" />
+            </td>
+
+            <td>
+              <p>contents of additional data document ...</p>
+            </td>
+          </tr>
+
+          <tr valign="top">
+            <td>library</td>
+
+            <td>
+              <input name="library" type="text" value="" />
+            </td>
+
+            <td>Name of Library used (can be empty if exactly one Library in
+            server).</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <input class="submit" type="submit" value="Submit request" />
+    </form>
+  </body>
+
+  <h4>Response:</h4>
+
+  <p>
+    <i>   mime-type: text/plain</i>
+  </p>
+
+  <p>For each document that could not be generated, return a line containing
+  the error code, the destination path of the Document, and the error message
+  separated by tabs.</p>
+
+  <p>The last line is of the form: <b>IMPORT ERRORS #errors</b>, where #errors
+  the number of import errors. Therefore a completely successful put returns a
+  single line 'IMPORT ERRORS 0'.</p>
+
+  <p> </p>
+
+  <h4>Error codes:</h4>
+
+  <dl>
+    <dt>
+      <a href="errorcodes.html#AccessControl">AccessControl</a>
+    </dt>
+
+    <dd>when the user is not allowed to write on a Document or
+    Collection.</dd>
+
+    <dt>
+      <a href="errorcodes.html#XMLData">XMLData</a>
+    </dt>
+
+    <dd>Conflicting path with a Collection.</dd>
+  </dl>
+</html>

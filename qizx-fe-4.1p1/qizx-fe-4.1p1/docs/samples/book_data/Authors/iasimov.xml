@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<author xmlns="http://www.qizx.com/namespace/Tutorial"
+  nationality="US" gender="male">
+  <fullName>Isaac Asimov</fullName>
+  <pseudonyms>
+    <pseudonym>Paul French</pseudonym>
+    <pseudonym>George E. Dale</pseudonym>
+  </pseudonyms>
+  <birthDate>January 2, 1920</birthDate>
+  <birthPlace>
+    <city>Petrovichi</city><country>Russian SFSR</country>
+  </birthPlace>
+  <blurb location="../Author%20Blurbs/Isaac_Asimov.xhtml"/>
+</author>

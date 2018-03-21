@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<book xmlns="http://www.qizx.com/namespace/Tutorial">
+  <title>The Fabulous Riverboat</title>
+  <author>Philip José Farmer</author>
+  <publicationDate>MCMLXXIII</publicationDate>
+  <editions>
+    <edition>
+      <ISBN>0441225888</ISBN>
+      <publisher>Ace Books</publisher>
+      <language>English</language>
+      <year>1988</year>
+    </edition>
+    <edition>
+      <ISBN>0425043150</ISBN>
+      <publisher>Berkley Books</publisher>
+      <language>English</language>
+      <year>1973</year>
+    </edition>
+  </editions>
+</book>

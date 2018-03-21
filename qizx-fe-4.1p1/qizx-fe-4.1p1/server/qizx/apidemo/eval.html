@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+  <head>
+    <title>Request eval</title>
+
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <h2 class="requestname">eval</h2>
+
+    <p class="shortd">Execute a XQuery script sent by the client.</p>
+
+    <p>If the expected return value is a single XML document or element, it
+    can be serialized in HTML or XHTML. If the return value is a sequence of
+    items, items can be wrapped in elements describing their type (see format
+    below).</p>
+
+    <form action="../api/" enctype="multipart/form-data" method="post">
+      <h4>HTTP Request: POST, GET</h4>
+
+      <h4>Parameters:</h4>
+
+      <table cellpadding="4" class="param_table" frame="void" rules="rows">
+        <thead align="center">
+          <tr align="left">
+            <th>Name</th>
+
+            <th>Value</th>
+
+            <th>Description</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="paramrow" valign="top">
+            <td>query</td>
+
+            <td><textarea cols="80" name="query" rows="6"
+            style="width: 280px;"></textarea></td>
+
+            <td>source code of the query.</td>
+          </tr>
+
+          <tr class="paramrow" valign="top">
+            <td>format</td>
+
+            <td><select name="format">
+                <option value="items">items</option>
+
+                <option value="XML">XML</option>
+
+                <option value="HTML">HTML</option>
+              </select></td>
+
+            <td>case insensitive value, optional ("XML" by default). <ul
+                type="circle">
+                <li>
+                  <p>"items" (data type "text/xml"): a sequence of wrapped
+                  items. See format below in 'Response' section.</p>
+                </li>
+
+                <li>
+                  <p>"XML" (data type "text/xml") Assumes the result is a
+                  single document/element item: if the query returns more than
+                  one node, the result will simply be malformed, but no error
+                  is raised.</p>
+                </li>
+
+                <li>
+                  <p>"HTML", "XHTML" (data type "text/html") : Assumes the
+                  result is a single HTML document.</p>
+                </li>
+              </ul></td>
+          </tr>
+
+          <tr class="paramrow" valign="top">
+            <td>encoding</td>
+
+            <td><input name="encoding" type="text" value="" /></td>
+
+            <td>[optional] a valid encoding name, used for serializing the
+            results. Default is UTF-8.</td>
+          </tr>
+
+          <tr class="paramrow" valign="top">
+            <td>maxtime</td>
+
+            <td><input name="maxtime" type="text" value="" /></td>
+
+            <td>[optional] maximum execution time in milliseconds (integer,
+            default is no limit).</td>
+          </tr>
+
+          <tr class="paramrow" valign="top">
+            <td>count</td>
+
+            <td><input name="count" type="text" value="" /></td>
+
+            <td>[optional] maximum number of items returned (meaningful when
+            format="items").</td>
+          </tr>
+
+          <tr class="paramrow" valign="top">
+            <td>first</td>
+
+            <td><input name="first" type="text" value="" /></td>
+
+            <td>[optional] rank of first item returned [meaningful when
+            format="items"].</td>
+          </tr>
+
+          <tr valign="top">
+            <td>library</td>
+
+            <td><input name="library" type="text" value="" /></td>
+
+            <td>Name of Library used (can be empty if exactly one Library in
+            server).</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p><input class="submit" type="submit" value="Submit request" /><input
+      name="op" type="hidden" value="eval" /></p>
+    </form>
+
+    <h4>Response:</h4>
+
+    <p><i> mime-type: text/xml or text/html</i></p>
+
+    <p>When using format=items, the returned items are wrapped as follows:
+    </p>
+
+    <pre class="programlisting">&lt;items&gt;
+ &lt;item type="integer"&gt;12345&lt;/item&gt;
+ &lt;item&gt;some text&lt;/item&gt;
+ &lt;item type="node()"&gt;&lt;a&gt;&lt;empty/&gt;text&lt;/a&gt;&lt;/item&gt; 
+&lt;/items&gt;</pre>
+
+    <p>Note that if several element nodes are returned and format is not
+    <b>items</b> , the result is not a well-formed document.</p>
+
+    <h4>Error codes:</h4>
+
+    <dl>
+      <dt><a href="errorcodes.html#Compilation">Compilation</a></dt>
+
+      <dd>invalid XQuery script.</dd>
+
+      <dt><a href="errorcodes.html#Evaluation">Evaluation</a></dt>
+
+      <dd>Error in XQuery execution</dd>
+
+      <dt><a href="errorcodes.html#TimeOut">TimeOut</a></dt>
+
+      <dd>Time limit (optional) reached in execution</dd>
+    </dl>
+  </body>
+</html>

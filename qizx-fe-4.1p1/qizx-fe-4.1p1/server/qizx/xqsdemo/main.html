@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>XQuery Services simple example</title>
+
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body><h2>XQuery Services simple example</h2><p>This is a very simple
+  example that uses a sample database of musical compact-discs from <a
+  href="http://www.freedb.org/en/">FreeDB</a>.</p><p>You can search for a
+  particular CD using keywords (full-text search). By clicking on a CD title,
+  you will get the details about the disc: this contents is formatted using a
+  XSLT stylesheet.</p><ul>
+      <li><h4><a href="../xqs/examples/init-db" target="results">Initialize
+      database</a></h4><p>Clicking here is necessary for importing the
+      documents containing the CD descriptions. This needs to be done only
+      once.</p></li>
+
+      <li><h4>Search a CD</h4><form action="../xqs/examples/ft-search"
+      target="results"><p>Search words: <input maxlength="50" name="words"
+      size="30" title="searched words" type="text" /> in <select name="area">
+          <option>title</option>
+
+          <option>track title</option>
+
+          <option>anywhere</option>
+        </select></p><button title="Search" type="submit"
+      value="Search">Search</button></form></li>
+
+      <li><h4><a href="../xqs/examples/report"
+      target="results">Analysis</a></h4><p>A simple example of
+      reporting.</p></li>
+
+      <li><h4><a href="../xqs/examples/" target="results">List
+      services</a></h4></li>
+    </ul><p><i>Attention: for this example to work properly, there must be
+  exactly one XML Library in the server. If you obtain an error "unspecified
+  Library name", it means that you have either 0 or several XML Libraries. The
+  XML Library used by XQuery Services can be specified explicitly in the
+  configuration of the server.</i></p></body>
+</html>

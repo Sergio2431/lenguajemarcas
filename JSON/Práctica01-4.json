@@ -1,0 +1,70 @@
+{
+  "facturas": {
+    "empresa": {
+      "nombre": "Empresa S.L",
+      "direccion": {
+          "calle": "Calle La Piruleta",
+          "numero": "7",
+          "ciudad": "Madrid"
+      },
+      "nif": "166256842",
+      "telefonos": [
+        "961234567",
+        "617854268",
+        "684267130"
+      ],
+      "Cliente": {
+        "nombre": "Paco",
+        "apellidos": [
+          "Guitierrez",
+          "Martinez"
+        ],
+        "direccion": {
+          "calle": "Calle La Sonrisa",
+          "numero": "24",
+          "ciudad": "Valencia"
+        },
+        "telefono": "648213790",
+        "nif": "47123813781",
+        "compra": {
+          "producto1": {
+              "nombre": "Corbata",
+              "cantidad": "3",
+              "precio": [
+                {
+                "iva": "21%",
+                "base imponible": "",
+                "total": "15€",
+                "forma de pago": "efectivo"
+                }
+              ]
+            },
+          "producto2": {
+              "nombre": "Zapatos",
+              "cantidad": "1",
+              "precio": [
+                {
+                "iva": "21%",
+                "base imponible": "",
+                "total": "20€",
+                "forma de pago": "tarjeta"
+                }
+              ]
+            },
+          "producto3": {
+              "nombre": "Camisas",
+              "cantidad": "4",
+              "precio": [
+                {
+                "iva": "21%",
+                "base imponible": "",
+                "total": "80€",
+                "forma de pago": "efectivo"
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }

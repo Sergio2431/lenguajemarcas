@@ -1,0 +1,36 @@
+
+declare boundary-space preserve;
+
+(: request parameters :)
+declare variable $param:p-bool as xs:boolean external;
+declare variable $param:p-string as xs:string external;
+
+declare variable $param:p-int as xs:int external;
+declare variable $param:p-integer as xs:integer external;
+declare variable $param:p-double as xs:double external;
+declare variable $param:p-float as xs:float external;
+
+declare variable $param:p-dateTime as xs:dateTime external;
+declare variable $param:p-date as xs:date external;
+declare variable $param:p-time as xs:time external;
+
+declare variable $param:p-hexBinary as xs:hexBinary external;
+declare variable $param:p-base64Binary as xs:base64Binary external;
+
+
+<response>
+  <param name="bool" type="{$param:p-bool instance of xs:boolean}">{ $param:p-bool }</param>
+  <param name="string" type="{$param:p-string instance of xs:string}">{ $param:p-string }</param>
+  
+  <param name="int" type="{$param:p-int instance of xs:int}">{ $param:p-int }</param>
+  <param name="integer" type="{$param:p-integer instance of xs:integer}">{ $param:p-integer }</param>
+  <param name="double" type="{$param:p-double instance of xs:double}">{ $param:p-double }</param>
+  <param name="float" type="{$param:p-float instance of xs:float}">{ $param:p-float }</param>
+  
+  <param name="dateTime" type="{$param:p-dateTime instance of xs:dateTime}">{ $param:p-dateTime }</param>
+  <param name="date" type="{$param:p-date instance of xs:date}">{ $param:p-date }</param>
+  <param name="time" type="{$param:p-time instance of xs:time}">{ $param:p-time }</param>
+  
+  <param name="hexBinary" type="{$param:p-hexBinary instance of xs:hexBinary}">{ $param:p-hexBinary }</param>
+  <param name="base64Binary" type="{$param:p-base64Binary instance of xs:base64Binary}">{ $param:p-base64Binary }</param>
+</response>

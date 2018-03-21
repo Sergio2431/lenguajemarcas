@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app
+    xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+    version="2.4">
+
+  <display-name>Qizx Server</display-name>
+
+  <servlet>
+    <description>This servlet implements the REST-style API Service.
+    </description>
+    <servlet-name>qizx-api</servlet-name>
+    <servlet-class>com.qizx.server.api.RESTAPIServlet</servlet-class>
+
+    <init-param>
+      <description>Location of the Qizx Server root. A directory that contains
+      a property file qizx-server.conf where all the actual configuration is.
+      </description>
+      <param-name>qizx-server-root</param-name><param-value>@qizx-server-root@</param-value>
+    </init-param>
+
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+
+  <servlet>
+    <description>This servlet provides a mechanism for XQuery services, similar
+    to Web Services. XQuery scripts stored on the server can be invoked and
+    passed typed parameters.
+    </description>
+    <servlet-name>qizx-xqs</servlet-name>
+    <servlet-class>com.qizx.server.xqs.XQServicesServlet</servlet-class>
+    
+    <init-param>
+      <description>Location of the Qizx Server root. A directory that contains
+      a property file qizx-server.conf where all the actual configuration is.
+      </description>
+      <param-name>qizx-server-root</param-name>
+      <param-value>@qizx-server-root@</param-value>
+    </init-param>
+
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <!-- <servlet>
+    <description>This servlet provides a front-end server, 
+    implementing the XQSP (XQuery Server Pages) mechanism where XQuery is used
+    as a HTML dynamic template language, similar to JSP, ASP, PHP etc
+    </description>
+    <servlet-name>xqsp</servlet-name>
+    <servlet-class>com.qizx.server.xqsp.XQSPServlet</servlet-class>
+    
+    <init-param>
+      <description>Location of the Qizx Server root. A directory that contains
+      a property file qizx-server.conf where all the actual configuration is.
+      </description>
+      <param-name>qizx-server-root</param-name>
+      <param-value>@qizx-server-root@</param-value>
+    </init-param>
+
+    <load-on-startup>1</load-on-startup>
+  </servlet> -->
+
+  <!-- Example mapping to Qizx services -->
+
+  <servlet-mapping> <!-- map /api/** URLs to back-end XML Data server -->
+    <servlet-name>qizx-api</servlet-name>
+    <url-pattern>/api/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping> <!-- map /xqs/** URLs to XQuery Services -->
+    <servlet-name>qizx-xqs</servlet-name>
+    <url-pattern>/xqs/*</url-pattern>
+  </servlet-mapping>
+
+  <!-- <servlet-mapping>  map **.xqsp URLs to XQSP engine 
+    <servlet-name>xqsp</servlet-name>
+    <url-pattern>*.xqsp</url-pattern>
+  </servlet-mapping>-->
+
+
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>Qizx XML Server</web-resource-name>
+      <url-pattern>/*</url-pattern>
+      <http-method>GET</http-method>
+      <http-method>POST</http-method>
+    </web-resource-collection>
+
+    <auth-constraint>
+      <role-name>admin</role-name>
+      <role-name>manager</role-name>
+      <role-name>user</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <login-config>
+    <auth-method>BASIC</auth-method>
+    <realm-name>Qizx XML Server</realm-name>
+    <form-login-config>
+      <form-login-page>/jsp/login.jsp</form-login-page>
+      <form-error-page>/jsp/error.jsp</form-error-page>
+    </form-login-config>
+  </login-config>
+  
+  <security-role>
+    <role-name>user</role-name>
+  </security-role>
+
+  <security-role>
+    <role-name>manager</role-name>
+  </security-role>
+
+  <security-role>
+    <role-name>admin</role-name>
+  </security-role>
+
+  <!--
+    ================ Built In Servlet Mappings =========================
+  -->
+
+  <!-- The mapping for the default servlet -->
+  <!--
+    <servlet-mapping> <servlet-name>default</servlet-name>
+    <url-pattern>/</url-pattern> </servlet-mapping>
+  -->
+
+  <!-- The mapping for the invoker servlet -->
+  <!--
+    <servlet-mapping> <servlet-name>invoker</servlet-name>
+    <url-pattern>/servlet/*</url-pattern> </servlet-mapping>
+  -->
+
+
+
+
+  <!-- ==================== Default Session Configuration ================= -->
+  <!-- You can set the default session timeout (in minutes) for all newly   -->
+  <!-- created sessions by modifying the value below.                       -->
+
+    <session-config>
+        <session-timeout>10</session-timeout>
+    </session-config>
+
+  <!-- ==================== Default Welcome File List ===================== -->
+  <!-- When a request URI refers to a directory, the default servlet looks  -->
+  <!-- for a "welcome file" within that directory and, if present,          -->
+  <!-- to the corresponding resource URI for display.  If no welcome file   -->
+  <!-- is present, the default servlet either serves a directory listing,   -->
+  <!-- or returns a 404 status, depending on how it is configured.          -->
+  <!--                                                                      -->
+  <!-- If you define welcome files in your own application's web.xml        -->
+  <!-- deployment descriptor, that list *replaces* the list configured      -->
+  <!-- here, so be sure that you include any of the default values that     -->
+  <!-- you wish to include.                                                 -->
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.htm</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+</web-app>

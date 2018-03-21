@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+  <head>
+    <title>Request getprop</title>
+
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <h2 class="requestname">getprop</h2>
+
+    <p class="shortd">Get the properties of a Library member or of a hierarchy
+    of members.</p>
+
+    <p></p>
+
+    <form action="../api/" enctype="multipart/form-data" method="POST">
+      <h4>HTTP Request: POST</h4>
+
+      <h4>Parameters:</h4>
+
+      <table cellpadding="4" class="param_table" frame="void" rules="rows">
+        <thead align="center">
+          <tr align="left">
+            <th>Name</th>
+
+            <th>Value</th>
+
+            <th>Description</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="paramrow" valign="top">
+            <td>path</td>
+
+            <td><input name="path" type="text" value="" /></td>
+
+            <td>Path of the Library member to get. Can be specified explicitly
+            or as the remainder the HTTP URL.</td>
+          </tr>
+
+          <tr class="paramrow" valign="top">
+            <td>depth</td>
+
+            <td><input name="depth" type="text" value="" /></td>
+
+            <td><p>if depth=0, get only properties of the member
+            itself.</p><p>If depth &gt; 0, the Library member must be a
+            Collection. Descend the collection tree down to this depth and
+            return properties of each Library member. Note that the returned
+            list of members is flat.</p></td>
+          </tr>
+
+          <tr class="paramrow" valign="top">
+            <td>properties</td>
+
+            <td><input name="properties" type="text" value="" /></td>
+
+            <td>[optional] names of properties to return. By default, all
+            properties are returned. The names are separated by commas or
+            whitespace.</td>
+          </tr>
+
+          <tr valign="top">
+            <td>library</td>
+
+            <td><input name="library" type="text" value="" /></td>
+
+            <td>Name of Library used (can be empty if exactly one Library in
+            server).</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p><input class="submit" type="submit" value="Submit request" /><input
+      name="op" type="hidden" value="getprop" /></p>
+
+      <h4>Response:</h4>
+
+      <p><i>mime-type: text/xml or text/plain</i></p>
+
+      <p>The return format is one or several element 'properties' wrapped in a
+      'getprop' element. Each element 'properties' corresponds with a Document
+      or Collection and contains a list of elements 'property' with a name a
+      type and a value:</p>
+
+      <pre>&lt;getprop&gt;
+ &lt;properties path="/plays/hamlet.xml"&gt;
+   &lt;property name="dtd-name"&gt;PLAY&lt;/property&gt;
+   &lt;property name="dtd-system-id"&gt;play.dtd&lt;/property&gt;
+   &lt;property name="nature"&gt;document&lt;/property&gt;
+   &lt;property name="path"&gt;/plays/hamlet.xml&lt;/property&gt;
+   &lt;property name="size" type="integer"&gt;274083&lt;/property&gt;
+ &lt;/properties&gt; 
+ &lt;properties path="/plays/r_and_j.xml"&gt;
+   &lt;property name="dtd-name"&gt;PLAY&lt;/property&gt;
+   ...
+ &lt;/properties&gt; 
+&lt;/getprop&gt;</pre>
+
+      <h4>Error codes:</h4>
+
+      <dl>
+        <dt><a href="errorcodes.html#NotFound">NotFound</a></dt>
+
+        <dd>when the Library member does not exist.</dd>
+
+        <dt><a href="errorcodes.html#AccessControl">AccessControl</a></dt>
+
+        <dd>when the user is not allowed to read the root Library member. Note
+        that Library members than cannot be read by a user do not appear in
+        the result.</dd>
+      </dl>
+
+      <p> </p>
+    </form>
+  </body>
+</html>

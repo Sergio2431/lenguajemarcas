@@ -1,0 +1,37 @@
+{
+  "personas": {
+    "persona": [
+      {
+        "nombre": "Pepe",
+        "altura": "1.72",
+        "peso": "75",
+        "aficion": [
+          "Fútbol",
+          "Baloncesto",
+          "Toros"
+        ],
+        "soltero": "true",
+        "direccion": {
+          "calle": "La mascletà",
+          "numero": "44",
+          "ciudad": "Valencia"
+        }
+      },
+      {
+        "nombre": "Juan",
+        "altura": "1.69",
+        "peso": "72",
+        "aficion": [
+          "Fútbol",
+          "Fotografía"
+        ],
+        "soltero": "false",
+        "direccion": {
+          "calle": "La Foguera",
+          "numero": "78",
+          "pais": "Alicante"
+        }
+      }
+    ]
+  }
+}

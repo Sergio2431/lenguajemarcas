@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+  <head>
+    <title>Request copy</title>
+
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <h2 class="requestname">copy</h2>
+
+    <p class="shortd">Move or rename a Document or a Collection.</p>
+
+    <ul type="disc">
+      <li>
+        <p>If src is a Document:</p>
+
+        <ul type="circle">
+          <li>
+            <p>If dst does not exist, create a copy with path dst.</p>
+          </li>
+
+          <li>
+            <p>If dst is a Document, it is overwritten by a copy of Document
+            src.</p>
+          </li>
+
+          <li>
+            <p>If dst is a Collection, the Document src is copied into
+            Collection dst.</p>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <p>If src is a Collection:</p>
+
+        <ul type="circle">
+          <li>
+            <p>If dst does not exist, create a copy with path dst of the
+            collection and all its contents.</p>
+          </li>
+
+          <li>
+            <p>If dst is a Document, it is an error (code XMLData)</p>
+          </li>
+
+          <li>
+            <p>If dst is a collection, the source collection and all its
+            contents is copied into the dst collection</p>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <p>else it is an error (code NotFound)</p>
+      </li>
+    </ul>
+
+    <form action="../api/" enctype="multipart/form-data" method="POST">
+      <input name="op" type="hidden" value="copy" />
+
+      <br />
+
+      <h4>HTTP Request: POST</h4>
+
+      <h4>Parameters:</h4>
+
+      <table cellpadding="4" class="param_table" frame="void" rules="rows">
+        <thead align="center">
+          <tr align="left">
+            <th>Name</th>
+
+            <th>Value</th>
+
+            <th>Description</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="paramrow" valign="top">
+            <td>src</td>
+
+            <td>
+              <input name="src" type="text" value="" />
+            </td>
+
+            <td>path of the source member.</td>
+          </tr>
+
+          <tr class="paramrow" valign="top">
+            <td>dst</td>
+
+            <td>
+              <input name="dst" type="text" value="" />
+            </td>
+
+            <td>path of the destination member.</td>
+          </tr>
+
+          <tr valign="top">
+            <td>library</td>
+
+            <td>
+              <input name="library" type="text" value="" />
+            </td>
+
+            <td>Name of Library used (can be empty if exactly one Library in
+            server).</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <input class="submit" type="submit" value="Submit request" />
+    </form>
+  </body>
+
+  <h4>Response:</h4>
+
+  <p>
+    <i>mime-type: text/plain</i>
+  </p>
+
+  Path of the destination member.
+
+  <p> </p>
+
+  <h4>Error codes:</h4>
+
+  <dl>
+    <dt>
+      <a href="errorcodes.html#NotFound">NotFound</a>
+    </dt>
+
+    <dd>when the src Library member does not exist.</dd>
+
+    <dt>
+      <a href="errorcodes.html#XMLData">XMLData</a>
+    </dt>
+
+    <dd>when the dst path conflicts with an existing Library member.</dd>
+
+    <dt>
+      <a href="errorcodes.html#AccessControl">AccessControl</a>
+    </dt>
+
+    <dd>when the user is not allowed to read or modify the Library member or
+    the src or dst parents.</dd>
+  </dl>
+</html>

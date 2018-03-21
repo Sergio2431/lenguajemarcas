@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<html><head><title>Request delete</title><link href="./style.css" rel="stylesheet" type="text/css"></link></head><body><h2 class="requestname">delete</h2><p class="shortd">Delete a Document or a Collection.</p>
+      <p></p>
+    <form action="../api/" method="POST" enctype="multipart/form-data"><input name="op" type="hidden" value="delete"></input><br></br><h4>HTTP Request: POST</h4><h4>Parameters:</h4><table cellpadding="4" frame="void" rules="rows" class="param_table"><thead align="center"><tr align="left"><th>Name</th><th>Value</th><th>Description</th></tr></thead><tbody><tr class="paramrow" valign="top"><td>path</td><td><input name="path" type="text" value=""></input></td><td>Path of the Library member to delete. Can be specified
+    explicitly or as the remainder the HTTP URL.</td></tr><tr valign="top"><td>library</td><td><input name="library" type="text" value=""></input></td><td>Name of Library used (can be empty if exactly one Library in server).</td></tr></tbody></table><input type="submit" value="Submit request" class="submit"></input></form></body><h4>Response:</h4><p><i>   mime-type: text/plain</i></p>Path of the deleted member, or empty string if
+    not found (no error). <p> </p><h4>Error codes:</h4><dl><dt><a href="errorcodes.html#AccessControl">AccessControl</a></dt><dd>when the user is not allowed to delete the
+    Library member or modify the parent.</dd></dl></html>

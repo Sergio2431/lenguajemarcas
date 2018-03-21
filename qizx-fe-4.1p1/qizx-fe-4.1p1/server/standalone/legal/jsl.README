@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>JSL Free Java NT Service Launcher for Windows/NT/W2K/Win 2003</title>
+                          
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+           
+  <meta name="Author" content="Michael Roeschter">
+           
+  <meta name="keywords"
+ content="Java, NT, NT Service, Free, Service, RMI, JMS, JavaBeans, Download, W2K, Windows">
+           
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+  <body bgcolor="#ccffff" text="#000000">
+       
+<table width="90%">
+    <tbody>
+      <tr>
+   <td><a href="http://sourceforge.net"> <img
+ src="http://sourceforge.net/sflogo.php?group_id=89367&amp;type=5"
+ width="210" height="62" border="0" alt="SourceForge.net Logo">
+        </a> </td>
+   <td align="center">                 
+      <p class="pagetitle"><a href="http://www.roeschter.com/index.html">Java
+ Service Launcher (for Windows)</a>&nbsp;JSL 0.99l - December 25th 2009</p>
+      <a href="http://92.51.133.148/jsl/jsl.zip">Download here</a>  or
+contact  the author at&nbsp; <a href="mailto:michael@roeschter.com">Michael@Roeschter.com</a>
+   </td>
+     </tr>
+       
+  </tbody>  
+</table>
+   <br>
+            
+<table border="0" width="20%" align="left">
+     <tbody>
+      <tr>
+        <td align="center" class="menu">   <b>@SourceForge</b><br>
+   <a href="http://jslwin.sourceforge.net">JSL Home</a><br>
+   <a href="https://sourceforge.net/projects/jslwin/">JSL Summary</a><br>
+   <a
+ href="https://sourceforge.net/project/showfiles.php?group_id=89367">JSL
+ Files</a> </td>
+   </tr>
+      <tr>
+        <td align="center" class="menu">        &nbsp;     </td>
+     </tr>
+     <tr>
+        <td align="center" class="menu">        <a href="index.html">Home</a> 
+     </td>
+     </tr>
+     <tr>
+        <td align="center" class="menu">        <a href="links.html">Links</a> 
+     </td>
+     </tr>
+     <tr>
+        <td align="center" class="menu">        <a href="current.html">Current
+ Release</a>     </td>
+     </tr>
+     <tr>
+        <td align="center" class="menu">        <a href="jsl.ini">Sample
+configuration  file</a>     </td>
+     </tr>
+     <tr>
+        <td align="center" class="menu">        <a href="changelog.html">Change
+ log <br>
+  and archive</a>     </td>
+     </tr>
+     <tr>
+        <td align="center" class="menu">        <a href="support.html">Support</a> 
+     </td>
+     </tr>
+     <tr>
+        <td align="center" class="menu">        <a
+ href="requirements.html">Requirements</a>     </td>
+     </tr>
+     <tr>
+        <td align="center" class="menu">        <a href="howto.html">How
+to</a>      </td>
+     </tr>
+     <tr>
+        <td align="center" class="menu">        <a href="examples.html">Examples</a> 
+     </td>
+     </tr>
+     <tr>
+        <td align="center" class="menu">        <a href="faq.html">FAQ</a> 
+    </td>
+     </tr>
+     <tr>
+        <td align="center" class="menu">        <a href="license.html">License</a> 
+     </td>
+     </tr>
+     <tr>
+        <td align="center" class="menu">        <a href="contact.html">Contact</a> 
+     </td>
+     </tr>
+            
+  </tbody>  
+</table>
+                      
+<table width="75%" border="0">
+       <tbody>
+      <tr>
+         <td align="left">                        
+      <p class="title">What is the JSL?</p>
+                         
+       </p>
+
+       </p>
+	<p><b>Now supports 64bit</b>
+      </p>
+       
+      <p>The Java Service Launcher is a small executable to start 32bit and 64bit JAVA-programs 
+as a Service. 32bit has been tested under Windows NT 4, Windows 2000, Windows 2003
+and Windows XP. 64bit has been tested under Windows 7. Windows 2008 and Vista work fine according user feedback 
+(they share the Kernel with Windows 7). 
+JSL is NOT a JVM. It's simply a utility
+like javap, javac or javah which will launch a Java application  through
+an installed JVM. <br>
+        <br>
+   As the way to do this has been standardized by Sun since JDK 1.2 the JSL
+ is fairly universal and should be able to use any JVM from 1.2 onward, including
+ JVMs from other vendors like IBM and JRockit. For supported JVMs and Windows
+ operating systems see <a href="current.html">Current Release</a>, for new
+ feature and changes see <a href="changelog.html">Change log</a>.       
+       </p>
+         </td>
+       </tr>
+           
+  </tbody>  
+</table>
+         <br>
+  <br>
+ <br>
+</body>
+</html>

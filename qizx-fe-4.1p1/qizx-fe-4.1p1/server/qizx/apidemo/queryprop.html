@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+  <head>
+    <title>Request queryprop</title>
+
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <h2 class="requestname">queryprop</h2>
+
+    <p class="shortd">Find Documents or Collections through a condition on
+    their metadata properties.</p>
+
+    <p>Example: find documents which have been imported from Jan 1, 2010. The
+    parameter <code>query</code> would contain:</p>
+
+    <pre class="programlisting">nature="document" and import-date &gt;=
+    xs:date("2010-01-01")</pre>
+
+    <p> </p>
+
+    <form action="../api/" enctype="multipart/form-data" method="POST">
+      <h4>HTTP Request: POST</h4>
+
+      <h4>Parameters:</h4>
+
+      <table cellpadding="4" class="param_table" frame="void" rules="rows">
+        <thead align="center">
+          <tr align="left">
+            <th>Name</th>
+
+            <th>Value</th>
+
+            <th>Description</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="paramrow" valign="top">
+            <td>query</td>
+
+            <td>
+              <input name="query" type="text" value="" />
+            </td>
+
+            <td>a boolean expression on properties of Documents or Collection
+            to find.</td>
+          </tr>
+
+          <tr class="paramrow" valign="top">
+            <td>path</td>
+
+            <td>
+              <input name="path" type="text" value="" />
+            </td>
+
+            <td>Path of a Collection restricting the search domain. Can be
+            specified explicitly or as the remainder the HTTP URL.</td>
+          </tr>
+
+          <tr class="paramrow" valign="top">
+            <td>properties</td>
+
+            <td>
+              <input name="properties" type="text" value="" />
+            </td>
+
+            <td>[optional] names of properties to return. By default, only
+            properties 'path' and 'nature' are returned. The names must be
+            separated by commas or whitespace.</td>
+          </tr>
+
+          <tr valign="top">
+            <td>library</td>
+
+            <td>
+              <input name="library" type="text" value="" />
+            </td>
+
+            <td>Name of Library used (can be empty if exactly one Library in
+            server).</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <input class="submit" type="submit" value="Submit request" />
+
+      <input name="op" type="hidden" value="queryprop" />
+    </form>
+  </body>
+
+  <h4>Response:</h4>
+
+  <p>
+    <i> mime-type: text/xml or text/plain</i>
+  </p>
+
+  <p>Returns properties of matching Collections or Documents, in the same way
+  as getprop, except that the root element is &lt;queryprop&gt;.</p>
+
+  <p> </p>
+
+  <h4>Error codes:</h4>
+
+  <dl>
+    <dt>
+      <a href="errorcodes.html#Compilation">Compilation</a>
+    </dt>
+
+    <dd>if the query is invalid.</dd>
+  </dl>
+</html>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<book xmlns="http://www.qizx.com/namespace/Tutorial">
+  <title>The Naked Sun</title>
+  <author>Isaac Asimov</author>
+  <publicationDate>MCMLVII</publicationDate>
+  <editions>
+    <edition>
+      <ISBN>0553293397</ISBN>
+      <publisher>Doubleday</publisher>
+      <language>English</language>
+      <year>1957</year>
+    </edition>
+  </editions>
+</book>

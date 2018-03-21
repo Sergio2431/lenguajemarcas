@@ -1,0 +1,35 @@
+
+(:~ full-text search :)
+
+declare option output:method "html";
+
+(: request parameters :)
+declare variable $param:words as xs:string := "";
+declare variable $param:area as xs:string := "";
+declare variable $param:first as xs:integer := 0;
+
+declare variable $freedb := collection("/freedb");
+declare variable $pagesize := 20;
+
+
+let $hits :=
+   if(not($param:words))
+    then $freedb//disc
+   else if($param:area = "title")
+    then $freedb//disc[ title contains text { $param:words } all words ]
+   else $freedb//disc[ . contains text { $param:words } all words ]
+let $hilited := if(not($param:words)) then "xxxx" else $param:words
+
+return
+<body>
+<h3>Search results ({ count($hits) }):</h3>
+<ol>
+{
+ for $d in ft:score($hits, $pagesize, $param:first)
+  return <li><a href="show-disc?id={$d/@id}">{
+               ft:highlight($d/title, $hilited, ())/node()
+            }</a></li>
+}
+</ol>
+<a href="ft-search?words={$param:words}&amp;area={$param:area}&amp;first={$param:first + $pagesize}">next</a>
+</body>

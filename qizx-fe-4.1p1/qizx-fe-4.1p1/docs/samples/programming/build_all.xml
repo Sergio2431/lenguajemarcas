@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<project basedir="." default="compile">
+
+  <fail message="&#160;&#10;&#10;  Not suitable for Qizx/open!">    
+    <condition><contains string="${ant.file}" substring="qizxopen"/>
+    </condition>
+  </fail>
+
+
+  <target name="compile">
+    <ant dir="put" target="compile" />
+    <ant dir="get" target="compile" />
+    <ant dir="query" target="compile" />
+    <ant dir="delete" target="compile" />
+    <ant dir="edit" target="compile" />
+    <ant dir="reindex" target="compile" />
+    <ant dir="addmeta" target="compile" />
+  </target>
+
+  <target name="clean">
+    <ant dir="put" target="clean" />
+    <ant dir="get" target="clean" />
+    <ant dir="query" target="clean" />
+    <ant dir="delete" target="clean" />
+    <ant dir="edit" target="clean" />
+    <ant dir="reindex" target="clean" />
+    <ant dir="addmeta" target="clean" />
+
+    <delete dir="db" />
+  </target>
+
+  <target name="compile_run_all" depends="clean">
+    <ant dir="put" target="compile" />
+    <ant dir="put" target="run" />
+
+    <ant dir="get" target="compile" />
+    <ant dir="get" target="run" />
+
+    <ant dir="query" target="compile" />
+    <ant dir="query" target="run" />
+
+    <ant dir="delete" target="compile" />
+    <ant dir="delete" target="run" />
+    <ant dir="get" target="run2" />
+
+    <ant dir="edit" target="compile" />
+    <ant dir="edit" target="run" />
+    <ant dir="get" target="run3" />
+
+    <ant dir="query" target="run2" />
+    <ant dir="reindex" target="compile" />
+    <ant dir="reindex" target="run" />
+    <ant dir="query" target="run2" />
+
+    <ant dir="query" target="run3" />
+    <ant dir="addmeta" target="compile" />
+    <ant dir="addmeta" target="run" />
+    <ant dir="query" target="run3" />
+
+    <ant dir="query" target="run_all" />
+  </target>
+</project>

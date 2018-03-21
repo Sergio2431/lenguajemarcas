@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<author xmlns="http://www.qizx.com/namespace/Tutorial"
+  nationality="US" gender="male">
+  <fullName>Larry Niven</fullName>
+  <birthDate>April 30, 1938</birthDate>
+  <birthPlace>
+    <city>Los Angeles</city><state>California</state><country>US</country>
+  </birthPlace>
+  <blurb xmlns:html="http://www.w3.org/1999/xhtml">
+    <html:blockquote cite="http://en.wikipedia.org/wiki/Larry_Niven">
+      <html:p>Many of Niven's stories take place in his <html:i>Known
+      Space</html:i> universe, in which humanity shares the several habitable
+      solar systems nearest to the Sun with over a dozen alien species,
+      including aggressive felines Kzinti and super-intelligent but cowardly
+      Pierson's Puppeteers, which are frequently central characters. The
+      Ringworld series is set in the <html:i>Known Space</html:i>
+      universe.</html:p>
+    </html:blockquote>
+  </blurb>
+</author>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+  <head>
+    <title>Request listlib</title>
+
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <h2 class="requestname">listlib</h2>
+
+    <p class="shortd">Returns the names of the XML Libraries managed by the
+    server.</p>
+
+    <p />
+
+    <form action="../api/" enctype="multipart/form-data" method="GET">
+      <input name="op" type="hidden" value="listlib" />
+
+      <br />
+
+      <h4>HTTP Request: GET</h4>
+
+      <h4>Parameters: none</h4>
+
+      <input class="submit" type="submit" value="Submit request" />
+    </form>
+  </body>
+
+  <h4>Response:</h4>
+
+  <p>
+    <i>   mime-type: text/plain</i>
+  </p>
+
+  <p>Names of the libraries separated by new-lines.</p>
+
+  <p> </p>
+
+  <h4>Error codes:</h4>
+
+  <dl>
+    <dt>
+      <a href="errorcodes.html#Server">Server</a>
+    </dt>
+
+    <dd>if the Qizx engine is offline.</dd>
+  </dl>
+</html>

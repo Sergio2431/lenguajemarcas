@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<book xmlns="http://www.qizx.com/namespace/Tutorial">
+  <title>To Your Scattered Bodies Go</title>
+  <author>Philip José Farmer</author>
+  <publicationDate>MCMLXXI</publicationDate>
+  <editions>
+    <edition>
+      <ISBN>0441820697</ISBN>
+      <publisher>Ace Books</publisher>
+      <language>English</language>
+      <year>1988</year>
+    </edition>
+    <edition>
+      <ISBN>0425028097</ISBN>
+      <publisher>Berkley Books</publisher>
+      <language>English</language>
+      <year>1971</year>
+    </edition>
+  </editions>
+</book>

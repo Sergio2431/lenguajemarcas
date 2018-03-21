@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<author xmlns="http://www.qizx.com/namespace/Tutorial"
+  nationality="US" gender="male">
+  <fullName>Philip José Farmer</fullName>
+  <pseudonyms>
+    <pseudonym>John H. Watson</pseudonym>
+  </pseudonyms>
+  <birthDate>January 26, 1918</birthDate>
+  <birthPlace>
+    <city>Terre Haute</city><state>Indiana</state><country>US</country>
+  </birthPlace>
+  <blurb location="../Author%20Blurbs/Philip_Jos%C3%A9_Farmer.xhtml"/>
+</author>

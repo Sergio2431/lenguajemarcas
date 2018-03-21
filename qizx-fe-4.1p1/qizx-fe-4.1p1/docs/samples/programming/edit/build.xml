@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<project basedir="." default="compile">
+    <import file="../build_common.xml" />
+
+    <!-- Execute target run3 in ../get before and after editing this
+       library member. -->
+
+    <target name="run" depends="compile">
+        <java classpathref="cp" fork="yes" classname="edit.Edit">
+            <arg value="../db" />
+            <arg value="Tutorial" />
+            <arg value="/Authors" />
+            <arg value="Philip José Farmer" />
+            <arg value="Kilgore Trout" />
+        </java>
+    </target>
+
+    <target name="xurun" depends="compile">
+        <java classpathref="cp" fork="yes" classname="edit.XUpdate">
+            <arg value="-v" />
+            <arg value="authorName" />
+            <arg value="Philip José Farmer" />
+            <arg value="-v" />
+            <arg value="pseudo" />
+            <arg value="Another" />
+            <arg line="-r /Authors" />
+            <arg value="../db" />
+            <arg value="Tutorial" />
+            <arg value="pseudonym.xq" />
+        </java>
+    </target>
+
+    <target name="xurun_badauthor" depends="compile">
+        <java classpathref="cp" fork="yes" classname="edit.XUpdate">
+            <arg value="-v" />
+            <arg value="authorName" />
+            <arg value="Philip Van Dam" />
+            <arg value="-v" />
+            <arg value="pseudo" />
+            <arg value="Another" />
+            <arg line="-r /Authors" />
+            <arg value="../db" />
+            <arg value="Tutorial" />
+            <arg value="pseudonym.xq" />
+        </java>
+    </target>
+
+</project>

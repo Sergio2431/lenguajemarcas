@@ -1,0 +1,13 @@
+
+(:~ display a CD using a XSLT stylesheet :)
+
+declare variable $freedb := collection("/freedb");
+
+declare option output:method "html";
+
+declare variable $param:id := "";
+declare variable $param:format := "pretty";
+
+for $d in $freedb//disc[ @id = $param:id ]
+return
+x:transform($d, "xsl/prettycd.xsl", <params/>)

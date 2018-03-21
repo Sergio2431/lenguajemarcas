@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+  <head>
+    <title>Request progress</title>
+
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <h2 class="requestname">progress</h2>
+
+    <p class="shortd">Return progress information about a long task such as
+    backup, commit etc.</p>
+
+    <p> </p>
+
+    <form action="../api/" enctype="multipart/form-data" method="GET">
+      <h4>HTTP Request: GET</h4>
+
+      <h4>Parameters:</h4>
+
+      <table cellpadding="4" class="param_table" frame="void" rules="rows">
+        <thead align="center">
+          <tr align="left">
+            <th>Name</th>
+
+            <th>Value</th>
+
+            <th>Description</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="paramrow" valign="top">
+            <td>id</td>
+
+            <td>
+              <input name="id" type="text" value="" />
+            </td>
+
+            <td>progress identifier returned by the monitored request.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <input class="submit" type="submit" value="Submit request" />
+
+      <input name="op" type="hidden" value="progress" />
+    </form>
+
+    <h4>Response:</h4>
+
+    <p><i>mime-type: text/plain</i></p>
+
+    <p>Plain text on 2 lines:</p>
+
+    <ul type="disc">
+      <li>
+        <p>task name + library name</p>
+      </li>
+
+      <li>
+        <p>percentage done, as a decimal number in range 0 to 1.</p>
+      </li>
+    </ul>
+
+    <p>Example:</p>
+
+    <pre>backup xlib 
+0.93 </pre>
+
+    <h4>Error codes:</h4>
+
+    <dl>
+      <dt><a href="errorcodes.html#NotFound">NotFound</a></dt>
+
+      <dd>when the progress id does not exist.</dd>
+    </dl>
+  </body>
+</html>

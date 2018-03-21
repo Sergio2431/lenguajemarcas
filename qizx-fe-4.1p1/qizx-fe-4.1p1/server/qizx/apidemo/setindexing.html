@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<html><head><title>Request setindexing</title><link href="./style.css" rel="stylesheet" type="text/css"></link></head><body><h2 class="requestname">setindexing</h2><p class="shortd">Define or redefine the Indexing Specification of the
+    Library.</p>
+      <p></p>
+    <form action="../api/" method="POST" enctype="multipart/form-data"><input name="op" type="hidden" value="setindexing"></input><br></br><h4>HTTP Request: POST</h4><h4>Parameters:</h4><table cellpadding="4" frame="void" rules="rows" class="param_table"><thead align="center"><tr align="left"><th>Name</th><th>Value</th><th>Description</th></tr></thead><tbody><tr class="paramrow" valign="top"><td>indexing</td><td><input type="file" name="indexing"></input></td><td>an XML document containing the Indexing
+    Specification. </td></tr><tr valign="top"><td>library</td><td><input name="library" type="text" value=""></input></td><td>Name of Library used (can be empty if exactly one Library in server).</td></tr></tbody></table><input type="submit" value="Submit request" class="submit"></input></form></body><h4>Response:</h4><p><i>   mime-type: text/plain</i></p>
+      <p>The name of the Library.</p>
+    <p> </p><h4>Error codes:</h4><dl><dt><a href="errorcodes.html#XMLData">XMLData</a></dt><dd>if the uploaded specification is invalid.</dd><dt><a href="errorcodes.html#AccessControl">AccessControl</a></dt><dd> if the user does not have the role allowing 
+    administration operations.</dd></dl></html>

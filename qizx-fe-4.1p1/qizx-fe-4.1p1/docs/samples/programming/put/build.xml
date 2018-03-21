@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<project basedir="." default="compile">
+  <import file="../build_common.xml" />
+
+  <target name="run" depends="compile">
+    <java classpathref="cp" fork="yes" classname="put.Put">
+      <!-- An alternative would be to add a CatalogManager.properties 
+           properties file to the CLASSPATH. -->
+      <sysproperty key="xml.catalog.files" 
+                   value="${basedir}/../../xhtml_dtd/catalog.xml" />
+      <sysproperty key="xml.catalog.prefer" value="public" />
+      <sysproperty key="xml.catalog.verbosity" value="0" />
+
+      <arg value="-f" />
+      <arg value="xml,xhtml" />
+      <arg value="../db" />
+      <arg value="Tutorial" />
+      <arg value="../../book_data/Author Blurbs" />
+      <arg value="../../book_data/Authors" />
+      <arg value="../../book_data/Books" />
+      <arg value="../../book_data/Publishers" />
+      <arg value="/" />
+    </java>
+  </target>
+</project>

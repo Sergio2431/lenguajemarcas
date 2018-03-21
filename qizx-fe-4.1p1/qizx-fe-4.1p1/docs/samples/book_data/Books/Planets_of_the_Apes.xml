@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<book xmlns="http://www.qizx.com/namespace/Tutorial">
+  <title>Planet of the Apes</title>
+  <author>Pierre Boulle</author>
+  <publicationDate>MCMLXIII</publicationDate>
+  <editions>
+    <edition>
+      <ISBN>0140024018</ISBN>
+      <publisher>Penguin Books</publisher>
+      <language>English</language>
+      <year>1975</year>
+    </edition>
+    <edition>
+      <ISBN>2266118285</ISBN>
+      <publisher>Pocket</publisher>
+      <language>French</language>
+      <year>2001</year>
+    </edition>
+  </editions>
+</book>

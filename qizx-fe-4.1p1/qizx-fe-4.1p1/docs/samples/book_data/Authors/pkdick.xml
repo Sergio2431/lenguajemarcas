@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<author xmlns="http://www.qizx.com/namespace/Tutorial"
+  nationality="US" gender="male">
+  <fullName>Philip K. Dick</fullName>
+  <pseudonyms>
+    <pseudonym>Richard Philips</pseudonym>
+    <pseudonym>Jack Dowland</pseudonym>
+  </pseudonyms>
+  <birthDate>December 16, 1928</birthDate>
+  <birthPlace>
+    <city>Chicago</city><state>Illinois</state><country>US</country>
+  </birthPlace>
+  <blurb location="../Author%20Blurbs/Philip_K._Dick.xhtml"/>
+</author>

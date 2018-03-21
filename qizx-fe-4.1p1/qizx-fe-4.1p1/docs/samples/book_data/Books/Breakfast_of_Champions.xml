@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<book xmlns="http://www.qizx.com/namespace/Tutorial">
+  <title>Breakfast of Champions</title>
+  <author>Kurt Vonnegut</author>
+  <publicationDate>MCMLXXIII</publicationDate>
+  <editions>
+    <edition>
+      <ISBN>0385280890</ISBN>
+      <publisher>Delacorte Press</publisher>
+      <language>English</language>
+      <year>1973</year>
+    </edition>
+  </editions>
+</book>

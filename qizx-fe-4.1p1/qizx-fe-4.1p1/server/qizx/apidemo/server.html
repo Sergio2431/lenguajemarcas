@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+  <head>
+    <title>Request server</title>
+
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <h2 class="requestname">server</h2>
+
+    <p class="shortd">Server control command.</p>
+
+    <p>Puts the Qizx engine online or offline. When offline, the Qizx engine
+    does not lock its XML Libraries, so they can be opened by another tool
+    such as QizxStudio.</p>
+
+    <p>In GET or if command="status", simply returns the online status. </p>
+
+    <p>Note that this operation has nothing to do with stopping the server
+    (Servlet Container) or the web app containing the Qizx server.</p>
+
+    <form action="../api/" enctype="multipart/form-data" method="POST">
+      <input name="op" type="hidden" value="server" />
+
+      <br />
+
+      <h4>HTTP Request: POST, GET</h4>
+
+      <h4>Parameters:</h4>
+
+      <table cellpadding="4" class="param_table" frame="void" rules="rows">
+        <thead align="center">
+          <tr align="left">
+            <th>Name</th>
+
+            <th>Value</th>
+
+            <th>Description</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="paramrow" valign="top">
+            <td>command</td>
+
+            <td>
+              <select name="command">
+                <option>status</option>
+
+                <option>online</option>
+
+                <option>offline</option>
+
+                <option>reload</option>
+              </select>
+            </td>
+
+            <td>
+              <ul>
+                <li>"status" : check if the Qizx engine is running.</li>
+
+                <li>"online" : start the Qizx engine.</li>
+
+                <li>"offline" for stopping the Qizx engine.</li>
+
+                <li>"reload" for reloading configuration then going
+                online.</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <input class="submit" type="submit" value="Submit request" />
+    </form>
+  </body>
+
+  <h4>Response:</h4>
+
+  <p>
+    <i>   mime-type: text/plain</i>
+  </p>
+
+  "online" if the server is up and running, "offline" otherwise.
+
+  <p> </p>
+
+  <h4>Error codes:</h4>
+
+  <dl>
+    <dt>
+      <a href="errorcodes.html#AccessControl">AccessControl</a>
+    </dt>
+
+    <dd>if the user does not have the role allowing administration operations
+    (except for 'status' which is allowed to all users).</dd>
+  </dl>
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<book xmlns="http://www.qizx.com/namespace/Tutorial">
+  <title>The Mote in God's Eye</title>
+  <authors>
+    <author>Larry Niven</author>
+    <author>Jerry Pournelle</author>
+  </authors>
+  <publicationDate>MCMLXXIV</publicationDate>
+  <editions>
+    <edition>
+      <ISBN>0739460951</ISBN>
+      <publisher>SFBC</publisher>
+      <language>English</language>
+      <year>2005</year>
+    </edition>
+    <edition>
+      <ISBN>0671218336</ISBN>
+      <publisher>Simon &amp; Schuster</publisher>
+      <language>English</language>
+      <year>1974</year>
+    </edition>
+  </editions>
+</book>

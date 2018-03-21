@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+  <head>
+    <title>Request dellib</title>
+
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <h2 class="requestname">dellib</h2>
+
+    <p class="shortd">Deletes a XML Library and all its contents.</p>
+
+    <form action="../api/" enctype="multipart/form-data" method="POST">
+      <input name="op" type="hidden" value="dellib" />
+
+      <br />
+
+      <h4>HTTP Request: POST</h4>
+
+      <h4>Parameters:</h4>
+
+      <table cellpadding="4" class="param_table" frame="void" rules="rows">
+        <thead align="center">
+          <tr align="left">
+            <th>Name</th>
+
+            <th>Value</th>
+
+            <th>Description</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="paramrow" valign="top">
+            <td>name</td>
+
+            <td>
+              <input name="name" type="text" value="" />
+            </td>
+
+            <td>name of the Library to delete.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <input class="submit" type="submit" value="Submit request" />
+    </form>
+  </body>
+
+  <h4>Response:</h4>
+
+  <p>
+    <i>mime-type: text/plain</i>
+  </p>
+
+  <p>Name of the library.</p>
+
+  <p> </p>
+
+  <h4>Error codes:</h4>
+
+  <dl>
+    <dt>
+      <a href="errorcodes.html#AccessControl">AccessControl</a>
+    </dt>
+
+    <dd>if the user does not have the role allowing administration operations
+    (except for 'status' which is allowed to all users).</dd>
+  </dl>
+</html>

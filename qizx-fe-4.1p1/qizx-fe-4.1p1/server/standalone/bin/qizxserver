@@ -1,0 +1,21 @@
+#!/bin/sh
+
+binDir=`dirname $0`
+
+if [ -f "$binDir/control.jar" ]
+then
+    controlJar="$binDir/control.jar"
+else
+    controlJar="$binDir/ctrlbase.jar"
+fi
+
+if [ `uname` = "Darwin" ]; then
+    opt="-Xdock:name=QizxServer -Xdock:icon=$binDir/icons/control.icns"
+    opt="$opt -Dcom.apple.mrj.application.apple.menu.about.name=QizxServer"
+    opt="$opt -Dapple.laf.useScreenMenuBar=true"
+else
+    opt=
+fi
+
+exec java $opt -jar "$controlJar"  "$@"
+

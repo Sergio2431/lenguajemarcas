@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<book xmlns="http://www.qizx.com/namespace/Tutorial">
+  <title>Ringworld</title>
+  <author>Larry Niven</author>
+  <publicationDate>MCMLXX</publicationDate>
+  <editions>
+    <edition>
+      <ISBN>0575077026</ISBN>
+      <publisher>Gollancz</publisher>
+      <language>English</language>
+      <year>2005</year>
+    </edition>
+    <edition>
+      <ISBN>0345293010</ISBN>
+      <publisher>Ballantine Books</publisher>
+      <language>English</language>
+      <year>1970</year>
+    </edition>
+  </editions>
+</book>

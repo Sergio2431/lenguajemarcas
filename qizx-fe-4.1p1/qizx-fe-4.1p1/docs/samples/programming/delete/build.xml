@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<project basedir="." default="compile">
+  <import file="../build_common.xml" />
+
+  <!-- Execute target run2 in ../get before and after deleting this
+       library member. -->
+
+  <target name="run" depends="compile">
+    <java classpathref="cp" fork="yes" classname="delete.Delete">
+      <arg value="../db" />
+      <arg value="Tutorial" />
+      <arg value="/Authors/ktrout.xml" />
+    </java>
+  </target>
+</project>

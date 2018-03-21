@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<book xmlns="http://www.qizx.com/namespace/Tutorial">
+  <title>The Demon Princes</title>
+  <author>Jack Vance</author>
+  <publicationDate>MCMLXIV</publicationDate>
+  <editions>
+    <edition>
+      <ISBN>0312853025</ISBN>
+      <publisher>Tor</publisher>
+      <language>English</language>
+      <year>1997</year>
+    </edition>
+    <edition>
+      <ISBN>1568655045</ISBN>
+      <publisher>SFBC</publisher>
+      <language>English</language>
+      <year>1998</year>
+    </edition>
+  </editions>
+</book>

@@ -1,0 +1,21 @@
+
+(:~ simple report: breakdown of discs by genre :)
+
+declare variable $freedb := collection("/freedb");
+
+declare option output:method "html";
+
+<html>
+
+<body>
+<h4>Most frequent genres</h4>
+<ul>{
+ let $total := count(//disc)
+ for $d in //disc
+ let $genre := $d/genre
+ group by $genre
+  order by count($d) descending
+ return <li>{ if(not($genre)) then "unspecified" else $genre }: { count($d) }</li>
+}</ul>
+
+</body></html>

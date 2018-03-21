@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<author xmlns="http://www.qizx.com/namespace/Tutorial"
+  nationality="US" gender="male">
+  <fullName>Kurt Vonnegut</fullName>
+  <birthDate>November 11, 1922</birthDate>
+  <birthPlace>
+    <city>Indianapolis</city><state>Indiana</state><country>US</country>
+  </birthPlace>
+</author>

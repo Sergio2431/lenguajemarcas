@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+  <head>
+    <title>Request info</title>
+
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <h2 class="requestname">info</h2>
+
+    <p class="shortd">Get information about the server and the XQuery
+    engine.</p>
+
+    <p>The output format is similar to properties, with a top element
+    "info":</p>
+
+    <pre class="programlisting">&lt;info&gt; &lt;property
+    name="server-name"&gt;Qizx Server&lt;/property&gt; &lt;property
+    name="product-name"&gt;Qizx&lt;/property&gt; &lt;property
+    name="product-version"&gt;4.0&lt;/property&gt; ... &lt;/info&gt;</pre>
+
+    <form action="../api/" enctype="multipart/form-data" method="GET">
+      <input name="op" type="hidden" value="info" />
+
+      <br />
+
+      <h4>HTTP Request: GET</h4>
+
+      <h4>Parameters: none</h4>
+
+      <input class="submit" type="submit" value="Submit request" />
+    </form>
+  </body>
+
+  <h4>Response:</h4>
+
+  <p>
+    <i> mime-type: text/xml</i>
+  </p>
+
+  A list of properties.
+
+  <p> </p>
+
+  <h4>Error codes:</h4>
+
+  <dl>
+    <dt>
+      <a href="errorcodes.html#Server">Server</a>
+    </dt>
+
+    <dd>problem on the server (offline).</dd>
+  </dl>
+</html>

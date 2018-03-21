@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>REST API Error format and codes</title>
+
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body><h1>Error response</h1><p>This API returns a HTTP code different than
+  "200 OK" only when a serious condition is encountered:</p><ul>
+      <li>401 Unauthorized: user authentication failure</li>
+
+      <li>50X : Server failure.</li>
+    </ul><p>For other errors, a plain text content with mime type:</p><pre> text/x-qizx-error; charset=UTF-8.</pre><p>is
+  returned with a code 200. The format is described
+  below.</p><p><b>Rationale</b>: this choice is made so that errors can be
+  handled even by some broken HTTP client libraries which cannot test the HTTP
+  code properly.</p><h1>Format</h1><ul>
+      <li><p>The first line contains a name followed by a colon. The rest of
+      the line is a message explaining the error briefly.</p><pre>Compilation: syntax error, unrecognized characters at end of query</pre></li>
+
+      <li>Depending on the error code, following lines can contain more
+      information</li>
+    </ul><h1>Error codes</h1><dl>
+      <dt><b><a name="BadRequest">BadRequest</a></b></dt>
+
+      <dd>the request is unknown or has invalid or missing parameters.</dd>
+
+      <dt><b><a name="Server">Server</a></b></dt>
+
+      <dd>incident in the server, for example on request on a stopped XML
+      engine.</dd>
+
+      <dt><b><a name="NotFound">NotFound</a></b></dt>
+
+      <dd>attempt to access a non-existent Document or Collection.</dd>
+
+      <dt><b><a name="AccessControl">AccessControl</a></b></dt>
+
+      <dd>user attempt to access Documents or Collections forbidden by the
+      access-control mechanism.</dd>
+
+      <dt><b><a name="XMLData">XMLData</a></b></dt>
+
+      <dd>an error detected by the Qizx XML database engine.</dd>
+
+      <dt><b><a name="Compilation">Compilation</a></b></dt>
+
+      <dd><p>XQuery compile time error, in syntax or static analysis.
+      </p><p>The next lines contain the location and message of each
+      error.</p></dd>
+
+      <dt><b><a name="Evaluation">Evaluation</a></b></dt>
+
+      <dd><p>XQuery evaluation error. </p><p>The description line begin with
+      the XQuery error code. The next lines contain the XQuery stack trace.
+      </p><p>Example:</p><pre>Evaluation: FORG0001 cannot cast to xs:int : invalid value 'a' for integer type
+in my:func (  ) as xs:int at line 2 column 6
+ at line 1 column 4 </pre></dd>
+
+      <dt><b><a name="TimeOut">TimeOut</a></b></dt>
+
+      <dd>the time limit defined by the eval request, or by the server
+      configuration has been reached.</dd>
+    </dl></body>
+</html>

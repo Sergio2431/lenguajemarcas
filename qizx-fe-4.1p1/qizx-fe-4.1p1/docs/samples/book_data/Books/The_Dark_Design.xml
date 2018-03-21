@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<book xmlns="http://www.qizx.com/namespace/Tutorial">
+  <title>The Dark Design</title>
+  <author>Philip José Farmer</author>
+  <publicationDate>MCMLXXVII</publicationDate>
+  <editions>
+    <edition>
+      <ISBN>0441138179</ISBN>
+      <publisher>Ace Books</publisher>
+      <language>English</language>
+      <year>1988</year>
+    </edition>
+    <edition>
+      <ISBN>0425038319</ISBN>
+      <publisher>Berkley Books</publisher>
+      <language>English</language>
+      <year>1977</year>
+    </edition>
+  </editions>
+</book>

@@ -1,0 +1,57 @@
+
+body {
+    font-family: Arial,Helvetica,sans-serif;
+	background-color: #fcfcfe;
+	margin: 8px;
+}
+
+
+h1, h2, h3, h4 {
+	color: #38c;
+}
+
+a {
+	color: #09b;
+}
+
+.deco {
+	color: #38c;
+}
+
+h4 { 
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+}
+
+li, ul, ol { 
+	margin-top: 0px;
+	margin-bottom: 0em;
+}
+
+p { 
+	margin-top: 0.25em;
+	margin-bottom: 0em;
+}
+
+dl {
+	margin-left: 1em;
+	margin-top: 0.25em;
+	margin-bottom: 0em;
+}
+
+pre {
+	background-color: #fff;
+	border: 1px solid #ddd;
+}
+
+.param_table {
+	border: 1px solid #ddd;
+	rules: 1px solid #ff0;
+}
+
+input.submit {
+	margin-top: 6px;
+	font-size: 1.0em;
+	font-weight: bold;
+	color: #3aa;
+}

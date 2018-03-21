@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html
+xmlns="http://www.w3.org/1999/xhtml"
+><head
+><title
+>XMLmind's Qizx - fast native XML database engine fully supporting XQuery | Release notes</title
+><meta
+content="Change history and release notes for Qizx."
+name="description"
+></meta
+><style
+type="text/css"
+>h1 {
+  color: #394986;
+  border-bottom: 1px solid #394986;
+}</style
+></head
+><body
+><h1
+class="title"
+id="v4.1"
+>Version 4.1p1 (December 6, 2010)</h1
+><p
+>Maintenance release.</p
+><h4
+>Optimizations &amp; Enhancements</h4
+><ul
+><li
+>The <tt
+>let $var :=</tt
+> is now fully lazy (unless an explicit type checking is specified). This is in general more efficient, but can occasionally lead to multiple computations of the same expression. This case will be optimized further in a later version.</li
+><li
+>(XQuery 1.1) Missing functions fn:head(), fn:tail(), fn:function-name(), fn:function-arity() have been added.</li
+><li
+>Qizx Server: documented troubleshooting with security on some Servlet servers (namely Tomcat on Ubuntu).</li
+></ul
+><h4
+>Bug fixes:</h4
+><ul
+><li
+>occasional database corruptions happening on massive XQuery Update jobs (EFL). Cause: bug in an internal cache implementation.</li
+><li
+>XQuery 1.1: higher-order functions implementation revised. Several issues fixed after trying the XQuery 1.1 test suite.</li
+><li
+>Database query compilation: Collection objects were not accepted as roots of Path Expressions (unlike Document objects).</li
+><li
+>Database query compilation: remaining issue in attribute in predicate e.g <tt
+>//item[relation/@category = "category123"]</tt
+></li
+><li
+>Qizx Server: "too many open files" occasionally happening on large bulk uploads.</li
+><li
+><p
+>Database bulk store:  in rare cases, the occurrence count per document -stored in indexes- could be 0, leading to slightly incorrect values returned by count(), for example <code
+>count(//SomeElement)</code
+> on the whole database. This would happen only if documents were indexed by batches of 4096 or more.</p
+>If it is the case for your databases, it is necessary to re-index completely to get correct counts.</li
+><li
+>A few failing conformance tests in XQTS 1.0.3 have been fixed, but there are still a number to correct. Most of it is of petty importance.</li
+></ul
+><h1
+class="title"
+id="v4.1"
+>Version 4.1 (October 11, 2010)</h1
+><h4
+>Enhancements</h4
+><ul
+><li
+><b
+>XQuery 1.1</b
+>. This version adds the following XQuery 1.1 features:<ul
+><li
+>"inline functions" (aka lambda functions) and high-order functions as specified in XQuery 1.1 Draft Specifications.</li
+><li
+>Standard try/catch.</li
+><li
+>Switch instruction (simple, unoptimized implementation)</li
+><li
+>Trigonometric functions, plus extension pow(x, y).</li
+></ul
+><p
+>Implemented XQuery 1.1 Features: functions as items, group by, for window, try catch, switch, output declarations.</p
+><p
+>Yet to implement: count clause in FLWOR, computed namespace constructors, formatting and miscellaneous functions.</p
+></li
+><li
+><p
+><b
+>Support of non-XML documents</b
+>: Qizx can now store documents containing any binary data. They are similar to "Blobs" of relational databases, and can be used for example to store images or plain text. Access is sequential, compression can be used as an option.</p
+></li
+><li
+><p
+><b
+>Scalability and efficiency</b
+>: Qizx has been validated on very large databases and documents. Improvements have been made to reduce memory consumption and bottlenecks.</p
+><p
+>A new "Extra Large" (XL) edition of Qizx is available through scripts qizx-xl and qizxstudio-xl (using qizxxl.jar). It can handle very large documents (up to 1 Terabyte, instead of 2 Gigabytes for the standard version).</p
+><p
+>[<a
+href="performance.html"
+>See details in this page</a
+>]</p
+><ul
+><li
+><p
+>Qizx has been validated with a 100 million-documents database, representing about 330 Gigabytes of FpML data. </p
+></li
+><li
+>Qizx Full-text capabilities have been tested on the English Wikipedia, containing some 9 millions pages and 38 Gb of XML. Realistic full-text queries with scoring were measured under 1 second (on a i7 860 processor).</li
+><li
+><p
+>A 44 Gigabyte document has been stored and indexed, using the specific "XL" edition (jar qizx64.jar). This edition has a theoretical limit of 1 Terabyte approximately for a single document, instead of 2 Gb in the standard version). </p
+></li
+><li
+><p
+>Improved recovery and cleanup after crashes (notably OutOfMemory in QizxStudio or qizx with local databases).</p
+></li
+></ul
+></li
+><li
+><p
+><b
+>Server installation wizard</b
+>: Qizx Server bundled with a Servlet container is installable very easily using a wizard.</p
+><p
+>The manual installation has been made simpler; the (buggy) former script mkserver has been discarded.</p
+></li
+><li
+><b
+>Minor improvements:</b
+><ul
+><li
+>Logging of XML Library operations has been improved and exposed in the Java API. Applications can now tune loggers and add outputs.</li
+><li
+>The Message window in QizxStudio has been restored and displays warnings and errors logged by the XML Library engine.</li
+></ul
+></li
+></ul
+><h4
+>Bug fixes:</h4
+><ul
+><li
+>Cancel method on XQuery Expression did not always stop execution.</li
+><li
+>Query compilation issue on attribute in predicate</li
+><li
+>Group-by producing long sequences (over 65536 items), first items were lost.</li
+><li
+>Compilation error in some numeric predicates: eg <code
+>(1 to 5)[let $x := position() return $x]</code
+> said " variable x not declared".</li
+><li
+>QizxStudio did not close local databases on exit, which could cause minor corruptions after updates.</li
+><li
+>Wrapper scripts qizxstudio and qizx did not work on Mac OS X.</li
+><li
+>Support of parameters passed in a File Part (POST multipart) in XQuery Services.</li
+><li
+>Missing or improper conversions in Java API (ItemFactory.createItem). Added conversions for xs:hexBinary and xs:base64Binary (from String and byte[]), and fixed xs:time.</li
+></ul
+><h1
+class="title"
+id="v4.0"
+>Version 4.0 (June 8, 2010)</h1
+><h4
+>Enhancements</h4
+><ul
+><li
+><p
+><b
+>Qizx Server</b
+>: </p
+><p
+>Qizx Server makes the embeddable XML database engine accessible to remote clients through a set of interfaces:</p
+><ul
+><li
+><p
+><i
+>API service</i
+> exposes the main capabilities of the Qizx engine to clients implemented on any platform that supports HTTP client requests: front-end servers in PHP, JSP. .NET languages etc, heavy clients running on any platform.</p
+><p
+>The architecture implied by this service is similar to many applications using a SQL back-end server.</p
+></li
+><li
+><p
+><i
+>XQuery Services</i
+> is a mechanism for calling XQuery scripts stored on the server, passing parameters.</p
+><p
+>It can be used to implement lightweight Web Services-like applications, or to implement business logic middle tiers.</p
+></li
+><li
+>Other services are in development, namely for directly implementing web applications in XQuery.</li
+><li
+><p
+>All services are based on a HTTP REST-style protocol. </p
+><p
+>They are extensible and their source code is available.</p
+></li
+><li
+>Qizx Server features an access control mechanism based on ACL.</li
+><li
+><p
+>See <a
+href="_distrib/docs/manual/server.html"
+>documentation</a
+> for more details.</p
+></li
+></ul
+></li
+><li
+><b
+>Tools</b
+><ul
+><li
+><p
+>Qizx Studio and the command-line tool <code
+>qizx</code
+> have been enhanced to work with the API service, thus providing remote administration tools.</p
+></li
+><li
+><p
+>Qizx Studio editor has been improved (undo, redo, save, save as). The query history is suppressed.</p
+></li
+><li
+><p
+>In Qizx/open, both tools are able to connect to a server (browsing and remote execution).</p
+></li
+></ul
+></li
+><li
+><b
+>XQuery</b
+> language and extensions:<ul
+><li
+><p
+>Preliminary support of <a
+href="http://www.w3.org/TR/xquery-sx-10/"
+>XQuery Scripting</a
+>. No support yet for validity checks and Update semantics.</p
+></li
+></ul
+></li
+><li
+><b
+>Java API </b
+>enhancements and changes:<ul
+><li
+>Interface LibraryManager has been enhanced. A LibraryManager is no more tied to a 'Library Group' on disk. The group descriptor files group.qlg are deprecated. See the documentation for details.</li
+><li
+>Slightly incompatible changes in LibraryManager: createLibrary() and openLibrary(); most users should be unaffected.</li
+><li
+>LibraryMember.setProperty now accepts values of type Item. Supported Item types are xs:string, xs:boolean, xs:integer, xs:double, node(), xs:dateTime. Other types are cast to these basic types.</li
+></ul
+></li
+><li
+><p
+><b
+>Moved to Java 5</b
+>. A JVM version 5+ is now required to run Qizx (Java 6 recommended because of XML parser issues and better Unicode support).</p
+><p
+>The API is unchanged, except minor enhancements listed here.</p
+></li
+></ul
+><h4
+>Bug fixes:</h4
+><ul
+><li
+>Operators except, intersect, union on XML Libraries could return incorrect results.</li
+><li
+>Resolution of XQuery module URIs.</li
+><li
+>ft:highlight spurious empty elements.</li
+><li
+>Overload of user functions now works (upgrade to current XQuery specifications).</li
+></ul
+><h1
+class="title"
+id="v3.1"
+>Version 3.1 (Feb 1, 2010)</h1
+><h4
+>Enhancements</h4
+><ul
+><li
+>See <a
+href="#v3.1beta"
+>version 3.1beta</a
+> for main changes.</li
+><li
+>Upgraded to latest XQuery Update Candidate Recommendation (09 June 2009). Qizx 3.1 passes 100 % of tests of XQUpdate Test Suite 1.0.0.</li
+><li
+>Automatic DOCTYPE generation when serializing a document. Can be disabled by new option auto-dtd=false.</li
+></ul
+><h4
+>Bug fixes</h4
+><ul
+><li
+>Serialization: improper generation of default namespace from attributes.</li
+><li
+>Query compilation issue on: <tt
+>$node/*[. ftcontains "..."]</tt
+></li
+></ul
+><h1
+class="title"
+id="v3.1beta"
+>Version 3.1 beta (Nov 9, 2009)</h1
+><h4
+>Enhancements</h4
+><ul
+><li
+>Added simple full-text query syntax and several full-text convenience functions for scoring, highlighting, extracting document snippets, looking up indexes: see chapter <a
+href="_distrib/docs/manual/fulltext_extensions.html"
+>full-text extension functions</a
+> in documentation for more details.</li
+><li
+>Improved full-text scoring speed. Document ranking (or weighting) through a meta-property ft-weight is now deprecated because too slow (this will be replaced by a more efficient mechanism in a later version).</li
+><li
+>Added a <a
+href="_distrib/docs/manual/programming.html#utilities"
+>chapter in the manual</a
+> introducing the main utility classes offered by the Java API.</li
+></ul
+><h4
+>Bug fixes</h4
+><ul
+><li
+>Miscellaneous full-text bugs detected by passing the <a
+href="http://dev.w3.org/2007/xpath-full-text-10-test-suite/"
+>XQFT Test Suite</a
+> (results to be published by W3C).</li
+><li
+>Opening an XML Library Group twice was throwing an unclear exception on Windows. This exception now explicitly tells that only one instance of LibraryManager can exist for a Library Group at a time.</li
+><li
+>XQuery Update: updates performed within an (updating) function were often lost.</li
+><li
+>Calling Library.createCollection(path), where path has no leading slash, provoked an infinite loop.</li
+><li
+>Several inefficiencies and memory leaks (yet unreported).</li
+></ul
+><h1
+class="title"
+id="v3.0"
+>Version 3.0 (May 20, 2009)</h1
+><h4
+>Bug fixes</h4
+><ul
+><li
+><p
+>A noxious bug that appeared under very heavy load, with many threads performing transactions concurrently, and that could corrupt an XML Library (reported by Lóránt Pintér). </p
+><p
+>This new version has been tested with over 200 threads.</p
+></li
+><li
+><p
+>Introduced a limit to the number of index segments created when a large number of threads perform transactions simultaneously. The multiplication of index segments increases memory consumption and could provoke OutOfMemoryException's. </p
+><p
+>Also fixed 2 memory leaks contributing to these OOME.</p
+></li
+></ul
+><h4
+>Enhancements</h4
+><ul
+><li
+>Improved crash recovery and database sanity checks.</li
+></ul
+><h1
+class="title"
+id="v3.0beta"
+>Version 3.0 beta (March 9, 2009)</h1
+><h4
+>Enhancements</h4
+><ul
+><li
+><p
+>Support of the <a
+href="http://www.w3.org/TR/xpath-full-text-10/"
+>standard XQuery Full-Text</a
+> functionalities. This new W3C Recommendation provides a comprehensive specification for full-text search, well integrated with the XQuery language. </p
+><p
+>The new full-text functionalities in Qizx are a nearly complete implementation of the standard, with an execution speed slightly improved with respect to the former implementation. <a
+href="_distrib/docs/manual/std_fulltext.html"
+>Documentation</a
+> can be found in the User's Manual section of the documentation. <a
+href="http://www.xmlmind.com/tutorials.html"
+>A new tutorial is available here</a
+> if you wish to get acquainted with this language extension.</p
+><p
+><b
+>Attention</b
+>: the former support of full-text in Qizx 2.x, based on extension functions, <i
+>has been completely withdrawn</i
+>. To help migrating your applications, we have written a dedicated chapter in the documentation: <a
+href="_distrib/docs/manual/std_fulltext.html#migra"
+>"Migration Guide from former Full-Text implementation"</a
+>. Version 3.1 might restore the former full-text functions as a layer on top of new full-text, but only if we feel a demand from our users.</p
+></li
+><li
+>Due to the new full-text, Indexing Specifications have slightly changed: "word sieves" are deprecated. The Java API contains a new package com.qizx.api.fulltext that provides means of customizing full-text features (tokenization, stemming, thesaurus, scoring).</li
+><li
+>Miscellaneous optimizations. As a result, Qizx 3.0 is about <a
+href="speed.html#xmark"
+>40% faster on the XMark benchmark</a
+>. More details can be found in the chapter "Writing efficient queries" of the Developer's Manual.</li
+></ul
+><h4
+>Bug fixes</h4
+><ul
+><li
+>A speed regression was introduced in 2.2 in function count() when access-control is not used.</li
+><li
+><p
+>Data conversions in Indexing Specifications were not used when the query is not indexable, leading to inconsistent execution errors. </p
+><p
+>Note: this data conversion mechanism is actually an extension of XQuery and goes beyond XML Schema. It is not yet available in Qizx/open.</p
+><p
+>For example assuming that Indexing Specifications are able to recognize and convert dates written like "12/31/99" in element and attributes values, a non-indexable query like <code
+>//*[date = xs:date("1999-12-31")]</code
+> did generate an error, whereas the indexable query <code
+>//event[date = xs:date("1999-12-31")]</code
+> was working as expected.</p
+></li
+><li
+>Issue when loading a module in the current directory when no location is provided.</li
+></ul
+><h1
+class="title"
+id="v2.2"
+>Version 2.2 (November 24, 2008)</h1
+><h4
+>New Licenses and new pricing</h4
+><p
+>Qizx 2.2 has a <a
+href="which_license.html"
+>new licensing scheme</a
+> and a new price list.</p
+><h4
+>Enhancements</h4
+><ul
+><li
+>Support of XQuery 1.1 features: the very useful and long awaited <b
+>group by</b
+> in FLWOR, and the <b
+>for window</b
+> clause which allows "chunking" a sequence based on conditions.</li
+><li
+>The documentation "Getting Started" now includes a section about XQuery Update.</li
+></ul
+><h4
+>Bug fixes</h4
+><ul
+><li
+>XQuery join optimization: a join using the operator "&lt;" could miss a result item due to improper bound test.</li
+><li
+>XQuery: built-in functions handling the type xs:anyUri (for example fn:resolve-uri) had type inconsistencies that could create surprising run-time type errors.</li
+><li
+><p
+>XQuery Update: Updating Expressions within most operators (except FLOWR, if, typeswitch, comma) are illegal but errors were not raised. As a consequence, some (invalid) expressions silently failed to execute. For example an Updating Expression within a node constructor, which is not allowed by the language, could not be executed.</p
+></li
+><li
+>Java API: inconsistencies in ItemSequence counts and positions when Access Control is used.<p
+>countItems() was counting nodes barred by Access Control, skip() was not consistent with moveToNextItem(). Now all methods take AccessControl into account, possibly with some speed penalty.</p
+></li
+><li
+>Java API: using a dangling Node of an actually deleted document was generating obscure exceptions. A DataModelException with message "deleted document" should now be raised. Notice it might happen that in-cache Nodes still be accessible even though their document is deleted.</li
+><li
+>XML Library engine: an error "bad block mark" was sometimes appearing when performing <tt
+>commit</tt
+> operations at high speed (for example: doing a massive number of document imports <i
+>each</i
+> followed immediately by a <tt
+>commit</tt
+>, which is definitely not a recommended practice).</li
+><li
+>XML Library engine: Library.deleteMember had caching issues <i
+>before</i
+> a commit was done.<p
+>for example <code
+>deleteMember("/a")</code
+> followed by <code
+>renameMember("/b", "/a")</code
+> generated an error claiming that "/a" was still existing.</p
+></li
+><li
+>XML Library engine: Library.renameMember had caching issues <i
+>before</i
+> a commit was done. If a document was first accessed, then renamed (or if an enclosing collection was renamed), then the getMember or getDocument methods could return stale handles still having the old path. Similar issue for collections.</li
+><li
+>Serialization bug in Indexing specifications, built programmatically and using names with namespaces: could prevent re-opening an XML Library.</li
+></ul
+><h1
+class="title"
+id="v2.1"
+>Version 2.1 (May 21, 2008)</h1
+><ol
+><li
+><p
+><b
+>XQuery Update</b
+>: Qizx 2.1 fully supports the <a
+href="http://www.w3.org/TR/xquery-update-10/"
+>XQuery Update Facility</a
+> draft specifications. </p
+><p
+>This implementation passes 100% of the current <a
+href="http://dev.w3.org/cvsweb/2007/xquery-update-10-test-suite/Overview.html?rev=1.7"
+>XQUF Test Suite</a
+>.</p
+></li
+><li
+>Qizx Studio improvements:<ul
+><li
+>New editing dialog allows easier definition of most frequent customizations of Indexing Specifications.</li
+><li
+>Progress bars for database operations like re-indexing and index compaction. These operations are now synchronous (see below).</li
+><li
+>Miscellaneous: more graceful namespace display in XML views, new icons, directories and paths remembered, double-click in tree views performs a full expand/collapse.</li
+></ul
+></li
+><li
+>API extensions:<ul
+><li
+>Methods <tt
+>optimize</tt
+> and <tt
+>reIndex</tt
+> of <tt
+>Library</tt
+> become synchronous (or blocking). The <tt
+>LibraryProgressObserver</tt
+> interface is extended to include these operations (slight incompatibility).</li
+><li
+>New utility class <tt
+>PushNodeBuilder</tt
+> to build native in-memory Nodes, as an alternative to using DOM or XML parsing for binding Node values to XQuery global variables.</li
+><li
+>DOM types are now recognized in Java Binding (arguments and return value of methods) and converted (by copy) to internal Qizx representation.</li
+><li
+>The XQuerySession interface has a new method enableJavaBinding for making Java classes eligible for use with the Java Binding mechanism. <b
+>Attention</b
+>: Java Binding is no more enabled by default when using the API. It is possible, though not recommended, to allow all Java classes at once.</li
+></ul
+></li
+><li
+>Miscellaneous:<ul
+><li
+>Some names of built-in properties of Documents have been changed. All default built-in properties are now documented.</li
+></ul
+></li
+></ol
+><h1
+id="v2.0"
+>Version 2.0 (January 14, 2008)</h1
+><p
+>First release.</p
+></body
+></html
+>

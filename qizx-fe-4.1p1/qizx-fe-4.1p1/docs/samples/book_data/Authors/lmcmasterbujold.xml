@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<author xmlns="http://www.qizx.com/namespace/Tutorial"
+  nationality="US" gender="female">
+  <fullName>Lois McMaster Bujold</fullName>
+  <birthDate>November 2, 1949</birthDate>
+  <birthPlace><city>Columbus</city><state>Ohio</state><country>US</country></birthPlace>
+</author>

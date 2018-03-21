@@ -1,0 +1,168 @@
+body {
+    background-color: white;
+    font-family: arial, helvetica, sans-serif;
+    font-size: 10pt;
+}
+
+code,
+kbd,
+tt,
+pre {
+    font-family: "courier new",courier,monospace;
+    font-size: 0.83em;
+}
+
+h1, 
+h2, 
+h3,
+h4,
+h5,
+h6 {
+  color: #1c0098;
+}
+
+p, li {
+  color: #302040;
+}
+
+h1 {
+    font-size: 1.5em;	
+}
+h2 {
+    font-size: 1.4em;	
+}
+h3 {
+    font-size: 1.2em;	
+},
+h4,
+h5,
+h6 {
+    font-size: 1.1em;
+}
+
+pre {
+    white-space: pre;
+    background-color: #EEEEEE;
+    border: 1px solid #c8c8c8;
+    padding: 5px;
+}
+
+
+.mediaobject table {
+    border: none;
+}
+.mediaobject table tr td {
+    border: none;
+}
+
+img {
+    border: none;
+}
+
+code.function {
+    background-color: #f8fff8;
+    padding: 2px;
+    border: 1px dotted #c0c0c0;
+}
+
+div.sidebar {
+    background-color: #f4f4f8;
+    border: 2px solid #C0C0C0;
+    padding: 3px;
+}
+
+div.sidebar p.title {
+  font-style: italic;
+}
+
+li {
+    margin-top: 1.0ex;
+    margin-bottom: 1.0ex;
+}
+
+table {
+	border: 1px solid;
+}
+
+td, th {
+	padding: 3px;
+	border: 1px solid #d0d0d0;
+}
+
+.tbl, .tblc {
+        border: 2px solid #d0d0E4;
+        text-align: left;
+}
+
+tr.download_title {
+       /* border: 1px solid #c0c0c0; */
+
+}
+
+tr.download {
+       background-color: #E8E8f4;
+
+}
+
+th.fancy1 {
+       background-color: #EEEEf4;
+}
+td.fancy1 {
+       background-color: #EEEEf4;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+    color: #28109E;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #4000ff;
+}
+
+sup,
+sub {
+    font-size: smaller;
+}
+
+.xmnews {
+    font-size: smaller;
+}
+
+.xmmenu {
+	font-size: 0.88em;
+}
+
+.xmmenutitle,
+a.xmtopmenuitem {
+	font-family: lucidasans, arial, helvetica, sans-serif;
+ 	font-size: 0.9em;
+	color: #b0c8c8; 
+	font-weight: bold;
+}
+
+.xmmenutitle {
+	font-size: larger;
+	color: #a0a8a8; 
+}
+
+a.xmtopmenuitem:visited {
+	color: #b0c8b0; 
+}
+a.xmtopmenuitem:hover {
+	color: #80f0f0; 
+}
+
+.xmtopmenubox {
+    background-image: url(xmdecor/topmenubg.gif);
+}
+
+.mainMenuItem {
+	margin-top: 8px;
+	border-top: 2px solid #e8e8f4;
+	border-bottom: 1px solid #e8e8f4;
+}
+
+/* ------------------------------------------------------------------------ */

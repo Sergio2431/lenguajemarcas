@@ -1,0 +1,22 @@
+
+(:~ Initialize the database :)
+
+declare variable $freedb := "/freedb/data";
+declare option output:method "html";
+
+try {
+  <h4>Database contains { count(doc($freedb)//disc) } CDs</h4>
+}
+catch($err) {
+  (: come here if document does not exist :)
+  try {
+    "create ",
+    xlib:write-document($freedb, doc("freedb-sample.xml")),
+    xlib:commit(),
+    <h4>Database now contains { count(doc($freedb)//disc) } CDs</h4>
+  }
+  catch($err) {
+    $err
+  }
+}
+

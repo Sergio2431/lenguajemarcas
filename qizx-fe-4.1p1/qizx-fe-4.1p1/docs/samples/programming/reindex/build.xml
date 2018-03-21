@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<project basedir="." default="compile">
+  <import file="../build_common.xml" />
+
+  <!-- Execute target run2 in ../query before and after re-indexing 
+       the database. -->
+
+  <target name="run" depends="compile">
+    <java classpathref="cp" fork="yes" classname="reindex.ReIndex">
+      <arg value="../db" />
+      <arg value="Tutorial" />
+      <arg value="indexing.xml" />
+    </java>
+  </target>
+
+  <target name="test_sieve" depends="compile">
+    <java classpathref="cp" fork="yes" classname="reindex.RomanNumberSieve">
+      <arg value="foo" />
+      <arg value="mcmlxx" />
+      <arg value="MCMLVII" />
+      <arg value="   MCML   " />
+    </java>
+  </target>
+</project>

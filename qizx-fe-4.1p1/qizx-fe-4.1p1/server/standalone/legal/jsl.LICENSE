@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>JSL Free Java NT Service Launcher for Windows/NT/W2K/Win 2003</title>
+            
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+   
+  <meta name="Author" content="Michael Roeschter">
+   
+  <meta name="keywords"
+ content="Java, NT, NT Service, Free, Service, RMI, JMS, JavaBeans, Download, W2K, Windows">
+   
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+  <body bgcolor="#ccffff" text="#000000">
+   
+<table width="90%">
+  <tbody>
+    <tr>
+ <td><a href="http://sourceforge.net"> <img
+ src="http://sourceforge.net/sflogo.php?group_id=89367&amp;type=5"
+ width="210" height="62" border="0" alt="SourceForge.net Logo">
+      </a> </td>
+ <td align="center">   
+      <p class="pagetitle"><a href="http://www.roeschter.com/index.html">Java
+Service Launcher (for Windows)</a>&nbsp;JSL 0.99l - December 25th 2009</p>
+    <a href="http://92.51.133.148/jsl/jsl.zip">Download here</a>  or contact
+the author at&nbsp; <a href="mailto:michael@roeschter.com">Michael@Roeschter.com</a>
+  </td>
+   </tr>
+  </tbody>
+</table>
+ <br>
+        
+<table border="0" width="20%" align="left">
+   <tbody>
+    <tr>
+      <td align="center" class="menu">   <b>@SourceForge</b><br>
+ <a href="http://jslwin.sourceforge.net">JSL Home</a><br>
+ <a href="https://sourceforge.net/projects/jslwin/">JSL Summary</a><br>
+ <a href="https://sourceforge.net/project/showfiles.php?group_id=89367">JSL
+Files</a> </td>
+ </tr>
+    <tr>
+      <td align="center" class="menu">        &nbsp;     </td>
+   </tr>
+   <tr>
+      <td align="center" class="menu">        <a href="index.html">Home</a> 
+    </td>
+   </tr>
+   <tr>
+      <td align="center" class="menu">        <a href="links.html">Links</a> 
+    </td>
+   </tr>
+   <tr>
+      <td align="center" class="menu">        <a href="current.html">Current
+Release</a>     </td>
+   </tr>
+   <tr>
+      <td align="center" class="menu">        <a href="jsl.ini">Sample configuration
+file</a>     </td>
+   </tr>
+   <tr>
+      <td align="center" class="menu">        <a href="changelog.html">Change
+log <br>
+and archive</a>     </td>
+   </tr>
+   <tr>
+      <td align="center" class="menu">        <a href="support.html">Support</a> 
+    </td>
+   </tr>
+   <tr>
+      <td align="center" class="menu">        <a
+ href="requirements.html">Requirements</a>     </td>
+   </tr>
+   <tr>
+      <td align="center" class="menu">        <a href="howto.html">How to</a> 
+    </td>
+   </tr>
+   <tr>
+      <td align="center" class="menu">        <a href="examples.html">Examples</a> 
+    </td>
+   </tr>
+   <tr>
+      <td align="center" class="menu">        <a href="faq.html">FAQ</a> 
+   </td>
+   </tr>
+   <tr>
+      <td align="center" class="menu">        <a href="license.html">License</a> 
+    </td>
+   </tr>
+   <tr>
+      <td align="center" class="menu">        <a href="contact.html">Contact</a> 
+    </td>
+   </tr>
+    
+  </tbody>
+</table>
+             
+<table width="75%" border="0">
+     <tbody>
+    <tr>
+       <td align="left">          
+      <p class="title">License</p>
+            There is no license required for version 0.9xx  of the JSL executable.
+The software is FREE. Free means you may use or reuse   any part of it the
+software. You may package it with commercial software  and use it in commercial
+and business environments. You may NOT claim copyright for the JSL software
+and  its source code or any parts of the software and source. Any derived
+work may retain a copyright or be commercialized  as long as the JSL parts
+of it are not covered by this copyright. <br>
+  You may distribute derived work in executable form and not contain the
+JSL source code if JSL constitues only a minor  part of the intellectual
+work (in other words, you can take the code and embed it in a Java   application
+you distribute commercially), but you may not charge in particular for or
+discriminate against or for   the use of the parts derived from JSL.<br>
+      <br>
+  In short words: Keep the spirit of free software up. Use it for your project
+but do not try to commercialize   my work.<br>
+      <br>
+Some pieces of the JSL srouce code come from MSDN and SUN Java launcher examples.
+As far as I can see Microsoft and SUN have granted developers acknowledging
+their copyright the permission to create redistributable binaries from those
+sources If you want to extend the JSL source code I recommend you acknowledge
+the MSDN and SUN license conditions. You probably have done so anyway by
+downloading Java and using VC++.<br>
+ 
+      <p><b>This software is supplied AS IS. Sources are supplied for informational 
+ purposes for the experienced developer.</b> </p>
+   
+      <p>Please note that this means: </p>
+   
+      <ul>
+   <li> I will not take any liability for any direct or indirect consequences
+ of running JSL on your computer.</li>
+    <li> Please do not use this software in critical environments where human
+ life depends on it. I did NOT run a thorough quality assurance for this
+software.</li>
+    <li> I cannot guarantee any support or response times.</li>
+    <li>I can offer advice and even consulting if I happen to have time.
+If  you need extensive customizations or extensive QA you will either need
+to  do it yourself or pay me to do it.<br>
+    </li>
+     
+      </ul>
+                </td>
+     </tr>
+   
+  </tbody>
+</table>
+       <br>
+</body>
+</html>
