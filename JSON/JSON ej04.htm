@@ -1,0 +1,49 @@
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>Creación de un vector de objetosw en JavaScript utilizando JSON</title>
+		
+      <script language = "javascript" >
+
+         document.writeln("<h2>Vector de objetos en JSON</h2>");
+
+         var libros = { "Cervantes" : [ 
+            { "titulo"  : "El Quijote", "any" : 1605 },
+            { "titulo"  : "Novelas ejemplares", "any" : 1612 }],  
+				
+            "Cela"  : [
+               { "titulo"  : "La colmena", "any" : 1951 }, 
+               { "titulo"  : "La familia de Pascual Duarte", "any" : 1942 }]    
+         }    
+
+         var i = 0
+         document.writeln("<table border = '2'><tr>");
+			
+         for(i = 0;i<libros.Cervantes.length;i++){	
+            document.writeln("<td>");
+            document.writeln("<table border = '1' width = 300 >");
+            document.writeln("<tr><td><b>Título</b></td><td width = 300>" + libros.Cervantes[i].titulo +"</td></tr>");
+            document.writeln("<tr><td><b>Año</b></td><td width = 300>" + libros.Cervantes[i].any +"</td></tr>");
+            document.writeln("</table>");
+            document.writeln("</td>");
+         }
+
+         for(i = 0;i<libros.Cela.length;i++){
+            document.writeln("<td>");
+            document.writeln("<table border = '1' width = 300 >");
+            document.writeln("<tr><td><b>Título</b></td><td width = 300>" + libros.Cela[i].titulo +"</td></tr>");
+            document.writeln("<tr><td><b>Año</b></td><td width = 300>" + libros.Cela[i].any+"</td></tr>");
+            document.writeln("</table>");
+            document.writeln("</td>");
+         }
+			
+         document.writeln("</tr></table>");
+
+      </script>
+
+   </head>
+	
+   <body>
+   </body>
+	
+</html>

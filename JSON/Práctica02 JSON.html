@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Práctica 2</title>
+
+    <script language = "javascript" >
+       document.writeln("<h2>Equipos de NBA</h2>");
+        var NBA = { "equipos" : [
+          { "Nombre"  : "Houston Rockets", "Ciudad" : "Houston", "Estado" : "Texas", "Quinteto" : [
+            { "Nombre"  : "Sergio", "Demarcación" : "Ala-Pivot", "Altura" : "1.65", "Nacionalidad" : "Español" },
+            { "Nombre"  : "Pedro", "Demarcación" : "Escolta", "Altura" : "2.15", "Nacionalidad" : "Agentino" },
+            { "Nombre"  : "Josep", "Demarcación" : "Base", "Altura" : "1.79", "Nacionalidad" : "Francés" },
+            { "Nombre"  : "Regi", "Demarcación" : "Alero", "Altura" : "2.02", "Nacionalidad" : "Español" },
+            { "Nombre"  : "Pedro", "Demarcación" : "Pivot", "Altura" : "1.86", "Nacionalidad" : "Brasileño" }
+          ]},
+          { "Nombre"  : "Golden State Warriors", "Ciudad" : "San Francisco", "Estado" : "California", "Quinteto" : [
+            { "Nombre"  : "Pablo", "Demarcación" : "Base", "Altura" : "1.67", "Nacionalidad" : "Estadounidense" },
+            { "Nombre"  : "Salva", "Demarcación" : "Alero", "Altura" : "1.93", "Nacionalidad" : "Español" },
+            { "Nombre"  : "Julio", "Demarcación" : "Escolta", "Altura" : "1.63", "Nacionalidad" : "Estadounidense" },
+            { "Nombre"  : "Juanjo", "Demarcación" : "Pivot", "Altura" : "2.30", "Nacionalidad" : "Español" },
+            { "Nombre"  : "Antonio", "Demarcación" : "Ala-Pivot", "Altura" : "2.03", "Nacionalidad" : "Estadounidense" }
+          ]},
+          { "Nombre"  : "Los Anegeles Lakers", "Ciudad" : "Los Angeles", "Estado" : "California", "Quinteto" : [
+            { "Nombre"  : "Manu", "Demarcación" : "Ala-Pivot", "Altura" : "1.96", "Nacionalidad" : "Español" },
+            { "Nombre"  : "Marcos", "Demarcación" : "Pivot", "Altura" : "2.08", "Nacionalidad" : "Español" },
+            { "Nombre"  : "Sergio", "Demarcación" : "Alero", "Altura" : "1.78", "Nacionalidad" : "Español" },
+            { "Nombre"  : "Elliot", "Demarcación" : "Escolta", "Altura" : "1.67", "Nacionalidad" : "Español" },
+            { "Nombre"  : "Joan", "Demarcación" : "Base", "Altura" : "1.94", "Nacionalidad" : "Español" }
+          ]}
+        ]
+       }
+       var i = 0
+       document.writeln("<table border = '2'><tr>");
+       for(i = 0;i<NBA.equipos.length;i++){
+          document.writeln("<td>");
+          document.writeln("<table border = '1' width = 300 >");
+          document.writeln("<tr><td><b>Equipo</b></td><td width = 300>" + NBA.equipos[i].Nombre +"</td></tr>");
+          document.writeln("<tr><td><b>Ciudad</b></td><td width = 300>" + NBA.equipos[i].Ciudad +"</td></tr>");
+          document.writeln("<tr><td><b>Estado</b></td><td width = 300>" + NBA.equipos[i].Estado +"</td></tr>");
+          document.writeln("<tr><td><b>Quinteto</b></td><td width = 300>" + " " + "</td></tr>");
+          document.writeln("<tr><td><b> </b></td><td width = 300>" + " " + "</td></tr>");
+          for(j = 0;j<NBA.equipos[i].Quinteto.length;j++){
+             document.writeln("<tr><td><b>Nombre</b></td><td width = 300>" + NBA.equipos[i].Quinteto[j].Nombre +"</td></tr>");
+             document.writeln("<tr><td><b>Demarcación</b></td><td width = 300>" + NBA.equipos[i].Quinteto[j].Demarcación +"</td></tr>");
+             document.writeln("<tr><td><b>Altura</b></td><td width = 300>" + NBA.equipos[i].Quinteto[j].Altura +"</td></tr>");
+             document.writeln("<tr><td><b>Nacionalidad</b></td><td width = 300>" + NBA.equipos[i].Quinteto[j].Nacionalidad +"</td></tr>");
+             document.writeln("<tr><td><b> </b></td><td width = 300>" + " " + "</td></tr>");
+          }
+          document.writeln("</table>");
+          document.writeln("</td>");
+       }
+       document.writeln("</tr></table>");
+    </script>
+
+  </head>
+  <body>
+
+  </body>
+</html>
