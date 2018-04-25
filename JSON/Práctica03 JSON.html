@@ -1,0 +1,34 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Práctica03</title>
+<script type="text/javascript">
+ function Validar(form)
+ {
+   for (let i = 0; i <form.length; i++)
+   {
+     if (form.elements[i].value == "")
+     {
+       alert("Debe introducir los datos de "+form.elements[i].id);
+       form.elements[i].focus();
+       return false;
+     }
+   }
+ }
+</script>
+</head>
+<body>
+ <form name="formulario" method="post" action="" onSubmit="return Validar(this)">
+  <table>
+   <tr><td>Nombre: </td><td><input type="text" name="nombre" id="nombre" /></td></tr>
+   <tr><td>Fecha de Nacimiento: </td><td><input type="date" name="fecha_nacimiento" id="fecha_nacimiento" /></td></tr>
+   <tr><td>Población: </td><td><input type="text" name="poblacion" id="poblacion" /></td></tr>
+   <tr><td>Dorsal: </td><td><input type="number" name="dorsal" id="dorsal" /></td></tr>
+   <tr><td>Demarcación: </td><td><input type="text" name="demarcacion" id="demarcacion" /></td></tr>
+   <tr><td>Telefono: </td><td><input type="number" name="telefono" id="telefono" /></td></tr>
+   <tr><td colspan="2"><input type="submit" name="Conectate" value="Conéctate" /></td></tr>
+  </table>
+ </form>
+</body>
+</html>
